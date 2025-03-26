@@ -1,0 +1,94 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      chào
+    intent: greet
+  - action: utter_greet
+  - user: |
+      tín chỉ
+    intent: tin_chi
+  - action: utter_tin_chi
+
+- story: happy path 1
+  steps:
+  - user: |
+      xin chào
+    intent: greet
+  - action: utter_greet
+  - user: |
+      tín chỉ
+    intent: tin_chi
+  - action: utter_tin_chi
+  - user: |
+      thông tin học phí
+    intent: hoc_phi
+  - action: utter_hoc_phi
+
+- story: happy path 2
+  steps:
+  - user: |
+      e chào cô ạ
+    intent: greet
+  - action: utter_greet
+  - user: |
+      học phần
+    intent: hoc_phan
+  - action: utter_hoc_phan
+  - user: |
+      lượn đây
+    intent: bye
+  - action: utter_bye
+
+
+
+- story: say goodbye
+  steps:
+  - user: |
+      tạm biệt
+    intent: bye
+  - action: utter_bye
+
+- story: test phuong_thuc_to_chuc_dao_tao
+  steps:
+  - user: |
+      trường tổ chức đào tạo sinh viên như thế nào
+    intent: phuong_thuc_to_chuc_dao_tao
+  - action: utter_phuong_thuc_to_chuc_dao_tao
+  - user: |
+      tạm biệt
+    intent: bye
+  - action: utter_bye
+
+- story: bot challenge
+  steps:
+  - user: |
+      bạn hỗ trợ gì
+    intent: what_support
+  - action: utter_what_support
+
+- story: bot greet what_support phuong_thuc_to_chuc_dao_tao bye
+  steps:
+  - user: |
+      em xin chào trường đại học công nghệ đông á
+    intent: greet
+  - action: utter_greet
+  - user: |
+      bạn có thể hỗ trợ gì
+    intent: what_support
+  - action: utter_what_support
+  - user: |
+      phương thức tổ chức và đào tạo của trường
+    intent: phuong_thuc_to_chuc_dao_tao
+  - action: utter_phuong_thuc_to_chuc_dao_tao
+  - user: |
+      hẹn gặp lại
+    intent: bye
+  - action: utter_bye
+
+
+
+

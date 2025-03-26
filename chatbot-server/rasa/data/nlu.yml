@@ -1,0 +1,968 @@
+version: "2.0"
+
+nlu:
+# Chào hỏi
+- intent: greet
+  examples: |
+    - em xin chào [trường đại học công nghệ đông á]{"entity":"organization"} a
+    - ê
+    - hí
+    - hú hí
+    - ú oà
+    - chị ơi cho e hỏi
+    - ad ơi cho e hỏi ạ
+    - add cho e hỏi ạ
+    - dạ page ơi cho e hỏi
+    - dạ cho em hỏi ạ
+    - cô ơi
+    - admin ơi
+    - em muốn đc [nhà trường]{"entity":"organization"} tư vấn thêm
+    - em muốn được tư vấn ạ
+    - tư vấn cho e đc k ạ
+    - e muốn [trường]{"entity":"organization"} tư vấn cho e 1 vài vấn đề được không ạ
+    - admin tư vấn giúp em với
+    - e cần tư vấn một số vấn đề ạ
+    - em muốn nhờ ad tư vấn ạ
+    - mong thầy cô tư vấn cho e ạ e cảm ơn
+    - [trường]{"entity":"organization"} có tiện tư vấn cho em không ạ
+    - e cần tư vấn ạ
+    - dạ ac có thể tư vấn cho e với ạ
+    - add có thể tư vấn cho e được ko ạ
+    - ad có thể tư vấn giúp mình không ạ
+    - [trường]{"entity":"organization"} có thể tư vấn giúp e được k ạ
+    - chào ad ad có thể tư vấn cho e 1 chút được không ạ?
+    - bạn tư vấn hệ đó giúp mình với ạ
+    - ac có thể tư vấn cho e chút dk a
+    - [trường]{"entity":"organization"} tư vấn thêm cho em với ạ
+    - [nhà trường]{"entity":"organization"} có thể tư vấn giúp em
+    - em muốn đc tư vấn ạ
+    - e muốn nhờ [trường]{"entity":"organization"} tư vấn được k ạ
+    - e chào thầy / cô e cần được tư vấn ạ
+    - e muốn đc tư vấn về trường
+    - chào ạ em muốn tư vấn ạ
+    - alo
+    - ê bot
+    - bot ơi
+    - trường
+    - chao xìn
+    - thầy ơi
+    - thầy cô ơi
+    - anh ơi
+    - mà anh ơi
+    - [trường]{"entity":"organization"} ơi
+    - [trường]{"entity":"organization"} ới
+    - e là học sinh lớp 12 và e có 1 số thắc mắc về trườngad có thể giải đáp e k ạ?
+    - mong thầy cô tu vấn cho em sớm ạ
+    - mong thầy cô giải đáp giúp em ạ
+    - [nhà trường]{"entity":"organization"} cho hỏi
+    - [nhà trường]{"entity":"organization"} cho em hỏi
+    - [nhà trường]{"entity":"organization"} ơi
+    - [nhà trường]{"entity":"organization"} cho e hỏi tí ạ
+    - [nhà trường]{"entity":"organization"} cho em hỏi ạ
+    - cho e hỏi mấy vấn đề với ad ơi?
+    - [trường]{"entity":"organization"} cho e hỏi ạ
+    - anh chị có thể bớt chút thời gian giúp em đc k ạ
+    - cho em hỏi ạ!!!
+    - cho e hỏi ạ 
+    - thắc mặc 1 chút về nhập học được không ạ
+    - cho em hỏi mới
+    - ad giúp em giải đáp thắc mắc với em cảm ơn
+    - xin giải đáp ạ
+    - mong ad giúp đỡ mk ak!
+    - mong ad có thể bớt chút thời gian giải thắc mắc này giúp emem cảm ơn ad ạ
+    - mong [trường]{"entity":"organization"} giải đáp
+    - mong ad giúp em với
+    - dạ cho em hỏi luôn
+    - dạ cho e hỏi
+    - ad ơi cho em thắc mắc thêm 1 chuyện nữa là
+    - em có chuyện thắc mắc
+    - [trường]{"entity":"organization"} ơi , cho em hỏi ạ
+    - cho em hỏi nốt ạ
+    - cho e hỏi là
+    - ad giải thích giúp e 1 số thắc mắc về [trường]{"entity":"organization"} đc không ạ
+    - dạ vâng , e nhiều thắc mắc lên hỏi ạ
+    - thầy trả lời cho e đúng k ạ em thắc mắc
+    - em hơi thắc mắc
+    - nhà trương em có thắc mắc muốn hỏi a
+    - e có chút thắc mắc ạ
+    - em có chút thắc mắc muốn tư vấn ạ!
+    - [nhà trường]{"entity":"organization"} ơi e có thắc mắc muốn hỏi
+    - em có 1 số thắc mắc về ạ
+    - e đang thắc mắc đc ad giải thích e cảm ơn ad nhìu ạ
+    - cho em hỏi vấn đề này với ạ
+    - dạ [trường]{"entity":"organization"} ơi cho e hỏi ạ
+    - cho mình hỏi nữa là
+    - cô cho em hỏi là
+    - nhưng hiện tại em có vấn đề như này ạ
+    - cho e hỏi a00
+    - ơ cho e hỏi
+    - thế cho e hỏi
+    - cho e hỏi lại
+    - [trường]{"entity":"organization"} ơi cho em hỏi
+    - dạ [trường]{"entity":"organization"} mình cho em hỏi ạ
+    - e muốn hỏi
+    - e muốn hỏi cho bạn
+    - em muốn hỏi
+    - cho em hỏi chút ạ
+    - dạ cho em hỏi là: em năm
+    - [trường]{"entity":"organization"} cho e hỏi là
+    - thầy ơi cho em hỏi ạ
+    - vậy cho em hỏi
+    - tôi có câu hỏibạn có thể trợ giúp không? ad ơi
+    - cho e hỏi chút đc không ạ
+    - ad ơi cho em hỏi chút ạ
+    - cho em hỏi chút với ạ?
+    - [nhà trường]{"entity":"organization"} cho mình hỏi chút ạ
+    - ad ơi cho mình hỏi chút với
+    - mình muốn hỏi chút
+    - [nhà trường]{"entity":"organization"} cho e hỏi 1 chút
+    - dạ cho e hỏi chút được không ạ
+    - add cho e hỏi chút
+    - cho e hỏi chút ạ
+    - cho e hỏi chút được k ạ
+    - cho em hỏi chút về giấy tờ nhập học ạ
+    - alo add cho mình hỏi chút
+    - cho em hỏi 1 chút ạ
+    - cho e hỏi chút đc k ạ
+    - cho e hỏi một chút
+    - dạ cho em hỏi chút được không ạ?
+    - các thầy cô cho e hỏi một chút được không ạ
+    - ad ơi cho em hỏi một chút ạ
+    - [nhà trường]{"entity":"organization"} cho e hỏi chút ạk
+    - dạ cho mình hỏi chút ạ
+    - em muốn hỏi một chút ạ
+    - ad ơi cho e hỏi chút đc không ạ
+    - ad cho e hỏi chút ạ 
+    - dạ ad fanpage cho em hỏi chút được không ạ
+    - ad cho em hỏi chút
+    - có ai chat được bây giờ không?
+    - em hoi cai nay dk k a
+    - ad cho e hỏi xíu
+    - dạ cho em hỏi xíu
+    - cho e hỏi xíu?
+    - dạ ad cho em hỏi xíu ạ
+    - cho e hỏi xíu vs ạ
+    - e hỏi xíu đc k ạ?
+    - ad cho em nhờ chút xíu có đc không ạ ?
+    - thầy cô cho e hỏi vơi ạ
+    - thầy / cô cho em hỏi
+    - thầy ơi em muốn hỏi
+    - chào thầy thầy có thể cho em hỏi tý đc k ạ 
+    - admin ơi cho em hỏi
+    - admin cho e hỏi ạ
+    - admin cho em hỏi
+    - ad hướng dẫn e với ạ
+    - ad hướng dẫn e vs ạ
+    - em ko hiểu 1 vài mục của tờ hướng dẫn
+    - dạ mong ad trả lời giúp em ơi ạ
+    - e muon hỏi
+    - cho e hỏi ít đc k ạ
+    - [trường]{"entity":"organization"} cho em hỏi 1 số vấn đề ạ
+    - mong ad trả lời giúp em với ạ
+    - xin chào em muốn hỏi 1 số câu hỏi ạ
+    - page ơiem có một số câu hỏi page trả lời giúp em với ạ
+    - e cảm ơn va mong ad trả lời giúp e
+    - cho e hỏi 1 số thông tin với ạ
+    - trả lời giúp em vs ạ
+    - ad ơi em muốn hỏi 1 số truyện
+    - ad trả lời e vse dg hóng lm r
+    - ad ơi trả lời giúp e với ạ
+    - có thể cho em hỏi 1 số vc đc k ạ
+    - ad chỉ em với ạ
+    - ad ơi cho e hỏi với ạ
+    - cho em hỏi một vài thông tin được không ạ ?
+    - cho em hỏi với ạ
+    - ad cho em hoi ??
+    - cho e hỏi cái này với ạ
+    - a ơi cho e hỏi với ạ
+    - ad cho e hỏi với ạ
+    - em có nguyện vọng vào trường
+    - cho e hỏi vs ạ
+    - ad cho em hỏi vs ạ
+    - cho e hỏi vs ad
+    - [nhà trường]{"entity":"organization"} cho em hỏi vs ạ?
+    - dạ em có nguyện vọng học ở trường
+    - dạ [trường]{"entity":"organization"} mình cho em hỏi với ạ
+    - ad cho e hỏi mục 7 với ạ
+    - ad chỉ mình với
+    - add ơi add cho em hỏi với ạ
+    - [nhà trường]{"entity":"organization"} cho em hỏi với ạ
+    - rep em với ạ
+    - page ơi em hỏi với đc ko ạ
+    - dạ cho e hỏi với
+    - ad ơi ,cho em hỏi với ạ
+    - cho e hoie là
+    - em muốn hỏi là
+    - ad cho e hỏi với ạ ,
+    - cho em hỏi với ạ !
+    - dạ cho e hỏi với ạ
+    - ad cho em hỏi với ạ
+    - add ơi cho e hỏi với ạ
+    - a chị cho e hỏi với ạ
+    - [trường]{"entity":"organization"} ơi cho e hỏi với ạ
+    - ad ơi cho e hỏi 1 việc với ạ
+    - ad cho e hỏi ngoài lề tí với
+    - ad ơi cho em hỏi với ạ
+    - [nhà trường]{"entity":"organization"} cho e hỏi thêm với ạ
+    - ad cho e hỏi ạ !!
+    - dạ ad ơi cho em hỏi
+    - ad cho em hỏi ,
+    - ad cho e hỏi ạ 
+    - ad cho em hỏi này
+    - ad cho em hỏi ạ
+    - ad ơi cho em hỏi tí ạ
+    - ad cho em hỏi tí ạ
+    - ad ơi cho em hỏi tý được không ạ
+    - ad cho xem hỏi
+    - ad cho hỏi
+    - e chào thầy cô ạh
+    - em chào anh chị ạ
+    - chào thầy ạ
+    - hello
+    - lô
+    - hi
+    - em thưa thầy cô
+    - e chào thầy cô ạ
+    - em chào thầy cô ạ!
+    - e chào cô ạ
+    - em chào thầy , cô ạ
+    - xin chào ạ
+    - xin chào bạn
+    - em chào [nhà trường]{"entity":"organization"} ạ
+    - em xin chào [nhà trường]{"entity":"organization"} ạ
+    - xin chào [trường]{"entity":"organization"} ạ
+    - e chào [nhà trường]{"entity":"organization"} ạ
+    - xin chào nhé
+    - em chào [nhà trường]{"entity":"organization"} ạ !
+    - dạ em chào [nhà trường]{"entity":"organization"} ạ
+    - em chào thầy cô!
+    - dạ e chào thầy cô ạ
+    - em chào thầy cô
+    - e chào các thầy cô ạ
+    - chào thầy / cô ad
+    - dạ ,e chào thầy cô ạ
+    - em chào thầy ạ !
+    - em chài thầy cô ạ
+    - e chào thầy cô ạ
+    - dạ em chào thầy / cô ạ
+    - dạ em chào admin
+    - chào admin của [trường]{"entity":"organization"} skh
+    - chào chị
+    - dạ em chào ad ạ
+    - e chào [trường]{"entity":"organization"} ạ
+    - em chào ạ
+    - xin chào ad
+    - chào
+    - chào ad !
+    - em chào [trường]{"entity":"organization"} ạ
+    - e chào ad
+    - chào add
+    - chào [trường]{"entity":"organization"} ạ 
+    - em chào page ạ
+    - e chào ad ạ 
+    - chào ad 
+    - dạ chào ad ạ!
+    - dạ e chào a cị
+    - chào bot
+    - bot ơi
+    - xin chào bot
+    - chào chatbot
+    - em chào ad ạ !
+    - alo ạ
+    - alo ad ơi!!
+
+# Tạm biệt
+- intent: thanks
+  examples: |
+    - ok
+    - em cám ơn ad nhiều ạ
+    - yêu add quá đi
+    - vâng e cám ơn nhé
+    - dạ em cám ơn ạ 
+    - vâng em cám ơn ạ
+    - dạ vầng e biết r  e cảm ơn chị an
+    - vầng ạ e cảm ơn ạ
+    - vầng ạ em cảm ơn ạ
+    - vầng ad 
+    - dạ vầng ạ
+    - thông tin tuyệt vời ạ
+    - à oke bạn
+    - dạ vâng ạ em cảm ơn ah
+    - da e biết ạ
+    - da vâng em cảm ơn ạ 
+    - da vâng ạ
+    - da cô
+    - dạ tl e vs ạ
+    - à , vâng ạ
+    - à vâng
+    - vâng ạ!
+    - vâng đúng r ạ
+    - ạ vâng
+    - vâng ạ 
+    - dạ vâng ạ
+    - dạ vâng ad
+    - dạ r ạ
+    - dạ dạ !
+    - dạ đc ạ
+    - à dạ
+    - dạ vâng ạ!
+    - dạ vâng
+    - dạ vâng ạ 
+    - dạ vâng
+    - dạ vâng ạ
+    - dạ vâng e nhận đc r ạ
+    - ok chị
+    - ok ad
+    - ok ad , ad ơi
+    - ok anh chị
+    - dạ ok em cảm ơn ad
+    - ok em cam ơn nha )))
+    - ok vâng ạ
+    - ok ạ vậy đắng kí lại từ đầu ạ
+    - xong nộp học bạ là ok à a
+    - ok ngon ngay
+    - ok cô
+    - dạ ok ad
+    - vang c , e cảm on
+    - vang em cam on a
+    - vang a
+    - vang ạ
+    - vang a còn bọn em ạ
+    - chị ơi
+    - ad ơi cho em
+    - dạ ad ơi 3
+    - ad ơi?
+    - ad ơi e hỏi
+    - ad ơi em hỏi
+    - vg ah
+    - vg 
+    - vg e cảm ơn ạ
+    - vg em cảm ơn
+    - vg ạ
+    - vg e cảm ad nhiều ạ
+    - vg ạ tks ad
+    - vâg ạ
+    - vâg em cảm ơn ạ
+    - dạ vâg
+    - vâg e cảm ơn ạ
+    - vâg ạk
+    - dạ vâg ạ
+    - à vâg em cảm ơn
+    - vâg em cảm ơn ạ
+    - vâgem cám ơn anh nhiều ạ
+    - dạ vâng e cám ơn ạ
+    - e cám ơn thầy
+    - dạ e cám ơn
+    - dạ e cám ơn ad nhiều nhé ^^
+    - dạ vâng e cảm ơn thầy cô ạ
+    - vâng ạ cảm ơn admin
+    - vâng em cảm các thầy cô ạ
+    - dạ vâng ạ , e cảm ơn thầy cô!
+    - vângem cảm ơn thầy cô ạ
+    - dạ vâng e cảm ơn thầy cô ạ!
+    - dạ em cảm ơn thầy cô ạ!
+    - dạ em cảm ơn ạ
+    - vâng em cảm ơn ad
+    - vâng ạ! em cảm ơn!
+    - vâng ạ em cảm ơn
+    - vâng ạ , em cảm ơn ad
+    - vâng em cảm ơn ad ạ
+    - vâng ,em cảm ơn ạ
+    - à vâng em cảm ơn ạ
+    - vâng em cảm ơn ạ !
+    - vâng ạ em cảm ơn thầy ạ
+    - vâng em cảm on
+    - em cảm ơn bạn tư vấn nhiều nhé 
+    - cảm ơn ad đã tư vấn nhiệt tình ạ
+    - cảm ơn ad đã tư vấn cho e ạ
+    - thank ad
+    - e cam ơn ad
+    - c ơn ad ạ
+    - oke ạ thank ad rất nhiều
+    - vâng e c ơn ad ạ
+    - dạ e cảm ơn
+    - dạ e cảm ơn ạh
+    - chúc ad một buổi chiều đầy sức khoẻ 3
+    - dạ e cảm ơn cô
+    - dạ cảm ơn ad ạ
+    - dạ thôie hiểu rồi ạe cảm ơn
+    - dạem cảm ơn ạ!
+    - dạ , em cảm ơn ạ
+    - dạ cho e cảm ơn
+    - dạ em cảm ơn ad ạ
+    - dạ em cảm ơn cô
+    - dạ e c ơn
+    - dạ em hiểu rồi , em cảm ơn ạ!
+    - dạ em cảm ơn ạ
+    - dạ , em cảm ơn ạ!
+    - vânge cảm ơn ạ
+    - vâng e cảm ơn ạ
+    - vâng ạ e cảm ơn ạ
+    - vâng d cảm ơn
+    - vânge cảm ơn ạk
+    - vâng e cảm ơn ad nhiều ak
+    - vâng e cảm ơn e trượt
+    - vâng ạ , e cảm ơn ạ
+    - vâng cảm ơn ad
+    - vâng xin cảm ơn
+    - vânge cảm ơn ad ạ
+    - vâng , e cảm ơn ạ
+    - vâng vậy e cảm ơn ad a
+    - vâng ạ e cảm ơn nhé hi
+    - vâng ạ e cảm ơn ạ
+    - vâng e cảm ơn ạ 
+    - vâng ạ cảm ơn pge
+    - vâng cảm ơn chị
+    - vâng m cảm ơn
+    - dạ vâng hihi e cảm ơn ạ
+    - dạ vâng ạ em cảm ơn
+    - dạ vâng ạ e cảm ơn
+    - dạ vâng ạ em cảm ơn ạ
+    - dạ vâng e cảm ơn ạ
+    - dạ vâng em cảm ơn ạ
+    - dạ vâng em cảm ơn ad
+    - dạ vâng ạ e hiểu rùi ạ em cảm on
+    - dạ vâng em cảm ơn ad ạ
+    - dạ vâng em cảm ơn ad!
+    - dạ vâng ạ , e cảm ơn ad nhé
+    - dạ vângem cảm ơn ạ 
+    - dạ vâng ạem cảm ơn ad
+    - dạ vâng cảm ơn [trường]{"entity":"organization"} ạ
+    - dạ vâng ạ em cảm ơn [nhà trường]{"entity":"organization"} ạ
+    - dạ vâng e cảm ơn ad
+    - dạ vâng ạ , em cảm ơn ad nhé
+    - dạ vâng , em cảm ơn ạ
+    - dạ vâng e cảm ơn nhiều ạ
+    - dạ vâng em cảm ơn ad ạ ,em sẽ suy nghĩ thêm ạ
+    - dạ vâng em cảm ơn ad nha
+    - dạ vâng e cảm ơn ạ 
+    - dạ vâng ạ em cảm ơn ạ 
+    - dạ vâng cảm ơn ạ
+    - dạ vâng em cảm ơn ạ!
+    - dạ vâng , e cảm ơn [nhà trường]{"entity":"organization"}
+    - em cảm ơn khi nào có thắc mắc em liên hệ lại
+    - em c ơn ạ
+    - em xin cảm ơn ạ!
+    - em chân thành cảm ơn 
+    - e cảm ơn nhaa
+    - e cảm ơn add ạ
+    - em cảm ơn ad nhiều !
+    - vậng e cảm ơn ạ
+    - vâng e cảm ơn ạ
+    - cảm ơn cháu nhiều
+    - cảm ơn bạn nhé
+    - ok cảm e cảm ơn ah
+    - à ra vậy em cảm ơn ạ
+    - em cảm ơn ad nhiều ạ
+    - e xin cảm ơn
+    - em hiểu rồi ạ , em cảm ơn
+    - mh cảm ơn
+    - e xin cảm ơn!
+    - em cảm ơn thầy cô ạ
+    - à em biết rồi em cảm ơn ạ
+    - em xin cảm ơn!
+
+# Tạ biệt
+- intent: bye
+  examples: |
+    - bye 
+    - bái bai
+    - đi đây
+    - hẹn gặp lại
+    - gặp lại sau
+    - bai bai
+    - thôi nha
+    - té đây
+    - tôi té đây
+    - off đây
+    - đi đây
+    - mình đi đây
+    - mình lặn đây
+    - mình đi ngủ đây
+    - lượn đây
+    - vậy thôi
+    - tạm biệt
+    - đi đây
+
+# Hỏi Chatbot hỗ trợ gì
+- intent: what_support
+  examples: |
+    - bạn có thể hỗ trợ gì
+    - tác dụng của bạn là gì
+    - mày có tác dụng gì
+    - khả năng của mày
+    - chức năng của mày
+    - khả năng của bạn
+    - khả năng của chatbot
+    - chức năng của chatbot
+    - bạn giúp được gì cho tôi
+    - bạn giúp được gì mình
+    - bạn giúp được gì
+    - mày giúp được gì
+    - mày làm gì
+    - bạn làm gì
+    - chatbot làm gì
+    - chatbot hỗ trợ
+    - hỏi gì bây giờ
+    - không biết nên hỏi gì
+    - bạn hỗ trợ được gì
+    - bạn hỗ trợ gì
+    - mày hỗ trợ gì
+    - sinh ra để làm gì
+    - bạn sinh ra nhắm mục đích gì
+    - bạn có thể trả lời những vấn đề nào
+    - hỗ trợ gì
+    - khả năng của bot
+    - bot có chức năng gì
+    - bot hỗ trợ gì vậy ạ
+    - bot có thể trả lời những vấn đề nào ạ
+    - bot hỗ trợ những lĩnh vực nào vậy ạ
+    - giải đáp gì
+    - tôi có thể hỏi gì
+    - lĩnh vực hỗ trợ
+    - có chức năng gì
+    - bạn có những chức năng gì
+    - bạn có thể trả lời những câu hỏi nào
+
+# Giáo viên
+- intent: teacher_with_name
+  examples: |
+    - [Lê Trung Thực](teacher_name)
+    - khoa cntt [Lê Trung Thực](teacher_name)
+    - khoa công nghệ thông tin [Lê Trung Thực](teacher_name)
+    - [Lê Trung Thực](teacher_name) khoa công nghệ thông tin 
+    - [Lê Trung Thực](teacher_name) công nghệ thông tin 
+    - [Lê Trung Thực](teacher_name) khoa cntt
+    - [Lê Trung Thực](teacher_name) cntt
+    - thầy [Lê Trung Thực](teacher_name)
+    - giáo viên [Lê Trung Thực](teacher_name)
+    - bài giảng thầy [Lê Trung Thực](teacher_name)
+    - tiết học thầy [Lê Trung Thực](teacher_name)
+    - thầy [Lê Trung Thực](teacher_name) dạy ở đâu
+    - phương pháp dạy học của thầy [Lê Trung Thực](teacher_name)
+    - tính cách của thầy [Lê Trung Thực](teacher_name) như thế nào
+    - cách giảng của giáo viên [Lê Trung Thực](teacher_name)
+    - thầy [Lê Trung Thực](teacher_name) giảng như thế nào
+    - [Ngô Thị Hoa](teacher_name)
+    - khoa cntt [Ngô Thị Hoa](teacher_name)
+    - khoa công nghệ thông tin [Ngô Thị Hoa](teacher_name)
+    - [Ngô Thị Hoa](teacher_name) khoa công nghệ thông tin 
+    - [Ngô Thị Hoa](teacher_name) công nghệ thông tin 
+    - [Ngô Thị Hoa](teacher_name) khoa cntt
+    - [Ngô Thị Hoa](teacher_name) cntt
+    - cô [Ngô Thị Hoa](teacher_name)
+    - giáo viên [Ngô Thị Hoa](teacher_name)
+    - bài giảng cô [Ngô Thị Hoa](teacher_name)
+    - tiết học cô [Ngô Thị Hoa](teacher_name)
+    - cô [Ngô Thị Hoa](teacher_name) dạy ở đâu
+    - phương pháp dạy học của cô [Ngô Thị Hoa](teacher_name)
+    - tính cách của cô [Ngô Thị Hoa](teacher_name) như thế nào
+    - cách giảng của giáo viên [Ngô Thị Hoa](teacher_name)
+    - cô [Ngô Thị Hoa](teacher_name) giảng như thế nào
+    - [Nguyễn Thị Thúy Nga](teacher_name)
+    - khoa cntt [Nguyễn Thị Thúy Nga](teacher_name)
+    - khoa công nghệ thông tin [Nguyễn Thị Thúy Nga](teacher_name)
+    - [Nguyễn Thị Thúy Nga](teacher_name) khoa công nghệ thông tin 
+    - [Nguyễn Thị Thúy Nga](teacher_name) công nghệ thông tin 
+    - [Nguyễn Thị Thúy Nga](teacher_name) khoa cntt
+    - [Nguyễn Thị Thúy Nga](teacher_name) cntt
+    - cô [Nguyễn Thị Thúy Nga](teacher_name)
+    - giáo viên [Nguyễn Thị Thúy Nga](teacher_name)
+    - bài giảng cô [Nguyễn Thị Thúy Nga](teacher_name)
+    - tiết học cô [Nguyễn Thị Thúy Nga](teacher_name)
+    - cô [Nguyễn Thị Thúy Nga](teacher_name) dạy ở đâu
+    - phương pháp dạy học của cô [Nguyễn Thị Thúy Nga](teacher_name)
+    - tính cách của cô [Nguyễn Thị Thúy Nga](teacher_name) như thế nào
+    - cách giảng của giáo viên [Nguyễn Thị Thúy Nga](teacher_name)
+    - cô [Nguyễn Thị Thúy Nga](teacher_name) giảng như thế nào
+
+# Chương trình đào tạo
+- intent: ke_hoach_giang_day_hoc_tap
+  examples: |
+    - kế hoạch giảng dạy
+    - kế hoạch học tập
+    - kế hoạch giảng dạy và học tập
+    - giảng dạy và học tập
+    - giảng dạy
+    - học tập
+    - đào tạo
+    - chương trình giảng dạy
+    - chương trình đào tạo
+    - kế hoạch dạy học như nào
+    - kế hoạch dạy học của trường
+    - trường có kế hoạch giảng dạy thế nào
+    - kế hoạch giảng dạy của trường
+    - kế hoạch học tập như nào
+    - kế hoạch học tập của trường
+
+# Học phần
+- intent: hoc_phan
+  examples: |
+    - tôi muốn hỏi về học phần
+    - giải thích học phần
+    - mình muốn hỏi học phần
+    - tư vấn học phần
+    - giải thích học phần
+    - mình chưa rõ học phần là gì
+    - học phần
+    - học phần là cái gì
+    - học phần là sao
+    - học phần có nghĩa là gì
+    - tôi không biết gì về học phần
+    - tôi không biết hoc phần là gì
+    - học phần là thế nào
+    - thế nào là học phần
+    - thông tin học phần
+    - các loại học phần
+    - có những học phần nào
+    - các học phần của trường
+    - trường có các học phần nào
+    - một học phần có mấy tín chỉ
+    - học phần là gì
+    - hocphan
+    - hoc phan
+
+# Tín chỉ
+- intent: tin_chi
+  examples: |
+    - tín chỉ
+    - thế nào là tín chỉ
+    - cho hỏi về tín chỉ
+    - tôi muốn hỏi thông tin tín chỉ
+    - hỏi tín chỉ
+    - giải thích tính chỉ
+    - tôi muốn biết tín chỉ là gì
+    - tôi muốn biết một tín chỉ là bao nhiêu phút
+    - có thể giải thích cho tôi tín chỉ là gì không
+    - có thể tư vấn cho tôi về thông tin tín chỉ của trường không
+    - tôi muốn biết một tín chỉ bằng bao nhiều giờ học
+    - tín chỉ là thế nào
+    - tín chỉ là sao
+    - tôi không biết tín chỉ
+    - không biết tín chỉ
+    - thông tin tín chỉ
+    - tín chỉ của trường
+    - tín chỉ là gì
+    - một tín chỉ bằng nhiều tiết học
+    - 1 tín chỉ bằng nhiều tiết học
+    - một tín chỉ bằng bao nhiều giờ học
+    - 1 tín chỉ bằng bao nhiều giờ học
+    - 1 tín chỉ có bao nhiều tiết thực hành
+    - 1 tín chỉ có bao nhiều tiết lý thuyết
+    - 1 tín chỉ có bao nhiều tiết thực hành và lý thuyết
+    - thời gian một tiết học lý thuyết 
+    - thời gian một tiết học thực hành
+    - một tiết học thực hành bao nhiêu phút
+    - một tiết học lý thuyết  bao nhiêu phút
+
+# Học phần
+- intent: hoc_phan_va_tin_chi
+  examples: |
+    - học phần, tín chỉ
+    - thế nào là học phần, tín chỉ
+    - học phần và tín chỉ là sao
+    - học phần, tín chỉ là sao
+    - học phần và tín chỉ là thế nào
+    - học phần tín chỉ là thế nào
+    - học phần và tín chỉ là cái gì
+    - tôi không biết học phần và tín chỉ là gì
+    - không hiểu học phần và tín chỉ là gì
+    - học phần và tín chỉ
+    - học phần và tín chỉ của trường
+    - tín chỉ và học phần của trường
+    - học phần và tín chỉ là gì
+    - tín chỉ học phần
+    - học phần tín chỉ
+    - hoc phan tin chi
+    - hoc phan va tin chi
+    - hocphan, tin chi
+
+# Hình thức đào tạo
+- intent: hinh_thuc_dao_tao
+  examples: |
+    - hình thức đào tạo của trường đại học là gì?
+    - có bao nhiêu hình thức đào tạo trong trường đại học?
+    - hình thức đào tạo có những loại nào?
+    - thế nào là hình thức đào tạo
+    - trường có những hình thức đào tạo nào
+    - những hình thức đào tạo nào đang được áp dụng tại trường
+    - hình thức đào tạo
+    - các hình thức đào tạo
+    - hình thức đào tạo là sao
+    - hình thức đào tạo là thế nào
+    - trường có mấy hình thức đào tạo
+    - trường có một hình thức đào tạo à
+
+# Phương thức tổ chức và đào tạo
+- intent: phuong_thuc_to_chuc_dao_tao
+  examples: |
+    - tổ chức, đào tạo
+    - phương thức đào tạo
+    - phương thức tổ chức, đào tạo
+    - các phương thức đào tạo, tổ chức
+    - các phương thức tổ chức đào tạo
+    - phương thức tổ chức và đào tạo
+    - phương thức đào tạo như thế nào
+    - phương thức đào tạo của trường
+    - phương thức tổ chức và đào tạo của trường
+    - trường đào tạo, tổ chức theo các phương thức nào
+    - đào tạo, tổ chức theo các phương thức nào
+    - dao tao, to chuc
+    - dao tao va to chuc
+    - cac phuong thuc dao tao, to chuc
+    - trường tổ chức đào tạo sinh viên như nào
+    - tổ chức đào tạo sinh viên như thế nào
+    - trường tổ chức đào tạo sinh viên như thế nào
+    - sinh viên được đào tạo như thế nào khi học tại trường
+    - cách trường tổ chức đào tạo sinh viên
+
+# Đồ án/khoá luận tốt nghiệp
+- intent: do_an_khoa_luan
+  examples: |
+    - đồ án, khoá luận tốt nghiệp là gì
+    - đồ án tốt nghiệp 
+    - khoá luận tốt nghiệp
+    - đồ án tốt nghiệp là gì
+    - khoá luận tốt nghiệp là gì
+    - đồ án 
+    - khoá luận
+    - luận văn
+    - luận văn tốt nghiệp
+    - luận văn tốt nghiệp là thế nào
+    - muốn hỏi về luận văn tốt nghiệp
+    - như thế nào là luận văn
+    - luận văn tốt nghiệp
+    - luận văn là gì
+    - khoá luận của trường
+    - đồ án của trường
+    - thông tin đồ án của trường
+    - thông tin đồ án tốt nghiệp của trường
+    - thông tin khoá luận tốt nghiệp của trường
+    - trường khoá luận tốt nghiệp
+    - trường đồ án tốt nghiệp
+    - đồ án, khoá luận
+    - tư vấn về đồ án của trường
+    - thông tin về đồ án và khoá luận tốt nghiệp
+    - tôi muốn được tư vấn về đồ án tốt nghiệp của trường
+
+# Điều kiện bảo vệ đồ án tốt nghiệp
+- intent: dieu_kien_bao_ve
+  examples: |
+    - điều kiện bảo vệ đồ án tốt nghiệp
+    - bảo vệ đồ án tốt nghiệp
+    - điều kiện bảo vệ đồ án
+    - điều kiện bảo vệ khoá luận
+    - bảo vệ khoá luận, đồ án
+    - bảo vệ khoá luận tốt nghiệp
+    - tôi muốn biết điều kiện để bảo vệ đồ án tốt nghiệp
+    - tôi muốn biết điều kiện để bảo vệ khoá luận tốt nghiệp
+    - tư vấn cho tôi về bảo vệ đồ án, khoá luận tốt nghiệp
+    - thông tin về bảo vệ đồ án tốt nghiệp
+    - thông tin về bảo vệ khoá luận tốt nghiệp
+    - làm thế nào để biết mình có được bảo vệ đồ án tốt nghiệp không
+    - làm thế nào để biết mình có được bảo vệ khoá luận không
+    - bảo vệ khoá luận tốt nghiệp, đồ án
+
+# Đồ án và điều kiện bảo vệ
+- intent: do_an_va_dieu_kien_bao_ve
+  examples: |
+    - đồ án và điều kiện bảo vệ
+    - bảo vệ tốt nghiệp
+    - khoá luận và điều kiện bảo vệ
+    - đồ án và điều kiện bảo vệ đồ án
+    - khoá luận, bảo vệ
+    - đồ án, bảo vệ
+    - tôi không biết đồ án tốt nghiệp là gì, bảo vệ đồ án tốt nghiệp là gì
+    - đồ án tốt nghiệp và bảo vệ
+    - khoá luận tốt nghiệp và bảo vệ
+    - đồ án tốt nghiệp, bảo vệ đồ án tốt nghiệp
+    - khoá luận tốt nghiệp, bảo vệ khoá luận tốt nghiệp
+
+# Đánh giá khoá luận
+- intent: danh_gia_do_an_khoa_luan
+  examples: |
+    - đánh giá khoá luận
+    - các thầy cô chấm điểm khoá luận như thế nào
+    - đánh giá khoá luận như thế nào
+    - chấm điểm khoá luận
+    - chấm điểm, đánh giá khoá luận
+    - chấm điểm, đánh giá đồ án
+    - tôi muốn được tư vấn về cách đánh giá và chấm điểm khoá luận
+    - tôi muốn được tư vấn về cách đánh giá và chấm điểm đồ án
+    - chấm điểm đồ án tốt nghiệp
+    - làm thế nào để chấm điểm đồ án tốt nghiệp
+    - làm thế nào để đánh giá đồ án
+    - làm thế nào để đánh giá khoá luận
+    - tôi muốn biết cách các thầy cô đánh giá đồ án tốt nghiệp
+    - tôi muốn biết cách các thầy cô đánh giá khoá luận tốt nghiệp
+    - ban giám khảo chấm điểm đồ án/khoá luận như thế nào
+    - đồ án/khoá luận
+    - đánh giá đồ án/khoá luận như thế nào
+    - đánh giá, chấm điểm 
+    - khoá luận chấm điểm
+    - khoá luận đánh giá
+
+# Học phí
+- intent: hoc_phi
+  examples: |
+    - học phí
+    - làm thế nào để xem học phí
+    - trường thu học phí
+    - thu học phí bao nhiêu
+    - học phí khoa cntt 
+    - học phí một kỳ là bao nhiêu
+    - học phí một năm là bao nhiêu
+    - học phí 1 kỳ là bao nhiêu
+    - học phí 1 năm là bao nhiêu
+    - một năm thu bao nhiêu tiền học phí
+    - học phí 4 năm học đại học
+    - học phí thu như nào
+    - tiền học phí
+    - tôi muốn biết về vấn đề tiền học phí của trường
+    - có thể tư vấn cho tôi biết học phí của trường trong 1 kỳ không
+    - tôi muốn được tư vấn về vấn đề học phí của trường
+    - làm thế nào để biết học phí bao nhiêu
+    - trường thu hoc phí bao nhiêu thế ạ
+
+- intent: le_phi_thi
+  examples: |
+    - lệ phí thi
+    - một lần thi tốn bao nhiêu tiền
+    - thi qua môn có cần tiền không
+    - em đi thi có cần cầm tiền không
+    - trường mình có thu lệ phí thi không ạ
+    - cho em hỏi lệ phí thi của trường
+    - thi lại có mất tiền không
+    - tiền thi lại
+    - đi có cần đem tiền
+    - đi thi lại cần nộp bao nhiêu tiền
+    - cần bao nhiêu tiền để đi thi
+    - đi thi có mất phí không
+    - đi thi một lần thi tốn bao nhiêu tiền
+    - bao tiền một lần thi
+    - bao nhiêu tiền một lần thi
+    - ba tiền 1 lần thi
+    - trường có yêu cầu đóng tiền khi thi không
+    - trường có bắt nộp lệ phí thi không ạ
+    - lệ phí thi của trường
+
+- intent: hoc_bong
+  examples: |
+    - học bổng
+    - quy chế học bổng
+    - em muốn nhận học bổng
+    - mình muốn nhận học bổng thì làm thế nào
+    - muốn có học bổng thì phải đạt điều kiện gì
+    - điều kiện nhận học bổng
+    - em muốn được nhận học bổng
+    - cô ơi em muốn được nhận học bổng thì phải đạt điều kiện gì
+    - cô ơi em muốn được nhận học bổng thì phải làm gì
+    - thầy ơi em muốn được nhận học bổng
+    - học bổng là gì
+    - khi nào được nhận học bổng
+    - cách nhận học bổng
+    - trường có học bổng không
+    - tôi đạt kết quả tốt thì có được học bổng không
+    - trường quy định cơ chế xét học bổng như thế nào
+    - làm thế nào để có học bổng
+    - thông tin về học bổng của trường
+    - tôi muốn biết về vấn đề tiền học bổng của trường
+    - học bổng được bao nhiêu tiền
+    - học bổng được tiền mặt hay chuyển khoản
+    - học bổng phát thế nào
+    - nhận học bổng
+    - học bổng có lớn không
+    - tư vấn cho tôi về vấn đề học bổng của trường
+
+# Xử lý vi pham
+- intent: xu_ly_vi_pham
+  examples: |
+    - vi phạm nội quy
+    - vi phạm kỷ luât
+    - trường sẽ phạt học sinh thế nào khi vi phạm kỷ luật
+    - các xử lý vi phạm kỷ luật của trường
+    - trường kỷ luật sinh viên như thế nào
+    - trường sẽ xử lý thế nào khi vi phạm nội quy
+    - gian lận khi thi cử thì có sao không
+    - quay cóp bài khi thi cử bị bắt gặp thì bị phạt thế nào
+    - quay cóp bài khi thi cử bị bắt gặp thì có bị làm sao không
+    - tôi muốn biết là giám thị phát hiện gian lận khi thi thì bị phạt gì
+    - bị phạt như thế nào khi vi phạm nội quy
+    - gian lận thi cử
+    - xem tài liệu khi thi
+    - không tuân thủ nội quy
+    - sại nội quy
+    - sai quy định
+    - không đúng quy định
+    - không đúng nội quy
+    - nội quy phạt
+    - xử lý vi phạm
+    - xử lý vi phạm nội quy quy định
+    - xử lý vi phạm nội quy
+    - xử lý vi phạm quy định
+    - tôi bị vi phạm nội quy
+    - vi phạm nội quy có phải nộp tiền không
+    - bỏ học
+    - trốn học có bị phạt không
+    - trốn học
+    - không đi học
+    - đi học muộn
+    - đi học muộn có làm sao không
+    - đi học muộn bị phạt như thế nào
+
+# Chê bai chatbot
+- intent: che_bai
+  examples: |
+    - mày ngu quá
+    - mày dốt quá
+    - bạn dốt quá
+    - bạn trả lời sai rồi
+    - bạn không được thông minh
+    - không thông minh
+    - gà quá
+    - non quá
+    - gà
+    - non
+    - yếu quá
+    - yếu vậy
+    - kém
+
+# Bot trả lời sai
+- intent: tra_loi_sai
+  examples: |
+    - sai rồi
+    - sai roi
+    - rồi sai
+    - trả lời sai
+    - câu trả lời của bạn không đúng
+    - câu trả lời của bạn sai rồi
+    - đếch phải
+    - đó không phải câu trả lời đúng
+    - đéo phải
+    - bot trả lời sai rồi kia
+    - sai rồi kìa bot
+    - sai sai
+    - sai
+    - gần đúng 
+    - bạn hiểu sai ý tôi rồi
+    - tôi chưa hiểu câu trả lời của bạn lắm
+    - tôi chưa hiểu
+    - chưa hiểu
+    - nghĩa là sao
+    - nghĩa là gì
+    - không hiểu
+    - trả lời sai rồi kìa
+    - không đúng
+
+# Ngoài phạm vi
+- intent: out_of_scope
+  examples: |
+    - Tôi muốn đặt đồ ăn
+    - Tôi là ai
+    - Tôi muốn đi ngủ
+    - Tôi muốn cái gì đó
+    - Tôi muốn đi về
+    - Có gì ăn không
+    - Tổng thống mỹ là ai
+    - Chủ tịch nước Việt Nam là ai
+
