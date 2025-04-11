@@ -1,34 +1,36 @@
+recipe: default.v1
+
 # Language
 language: vi
 
 # NLU Pipeline
 pipeline:
-- name: HFTransformersNLP
-  model_weights: "vinai/phobert-base"
-  model_name: "phobert"
-- name: "LanguageModelTokenizer"
-- name: "LanguageModelFeaturizer"
+- name: WhitespaceTokenizer
+- name: LanguageModelFeaturizer
+  model_name: "bert"
+  model_weights: "rasa/LaBSE"
 - name: DIETClassifier
   epochs: 100
-  constrain_similarities: true
+  constrain_similarities: True
 - name: FallbackClassifier
   threshold: 0.7
   ambiguity_threshold: 0.1
 
 # Policies
 policies:
-  - name: RulePolicy
-    core_fallback_threshold: 0.5
-    fallback_action_name: 'action_default_fallback'
-    enable_fallback_prediction: True
-  - name: MemoizationPolicy
-    max_history: 6
-  - name: TEDPolicy
-    batch_strategy: sequence
-    model_confidence: softmax
-    max_history: 6
-    constrain_similarities: True
-    epochs: 100
-    batch_size:
-    - 32
-    - 64
+- name: RulePolicy
+  core_fallback_threshold: 0.5
+  fallback_action_name: 'action_default_fallback'
+  enable_fallback_prediction: True
+- name: MemoizationPolicy
+  max_history: 6
+- name: TEDPolicy
+  batch_strategy: sequence
+  model_confidence: softmax
+  max_history: 6
+  constrain_similarities: True
+  epochs: 100
+  batch_size:
+  - 32
+  - 64
+assistant_id: 20250411-171115-composite-technician

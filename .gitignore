@@ -1,5 +1,14 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Configure VS Code settings
+.vscode
+
+# __pycache__ directories
+__pycache__
+
+# Models folder
+models/
+
 # dependencies
 chatbot-client/node_modules
 chatbot-client/.pnp

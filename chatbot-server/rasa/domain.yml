@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.1"
 
 session_config:
   session_expiration_time: 0.0
@@ -26,6 +26,8 @@ intents:
   - hoc_bong
   - xu_ly_vi_pham
   - out_of_scope
+  - che_bai
+  - tra_loi_sai
 
 # Các thực thể
 entities:
@@ -36,9 +38,15 @@ entities:
 slots:
   teacher_name:
     type: text
+    mappings:
+      - type: from_entity
+        entity: teacher_name
     influence_conversation: false
   class_name:
     type: text
+    mappings:
+      - type: from_entity
+        entity: class_name
     influence_conversation: false
 
 responses:
@@ -69,10 +77,6 @@ responses:
 
   utter_please_rephrase:
   - text: "Xin lỗi, hiện tại mình chưa hiểu ý bạn lắm. Bạn có thể hỏi lại được không?"
-
-  # Trả lời mặc định
-  utter_default:
-  - text: "Xin lỗi, hiện tại tôi chưa hiểu ý bạn?"
 
   # Trả lời cho câu hỏi ngoài phạm vi
   utter_out_of_scope:
@@ -142,7 +146,6 @@ responses:
 actions:
   - utter_please_rephrase
   - utter_out_of_scope
-  - utter_default
   - utter_greet
   - utter_bye
   - utter_thanks
@@ -160,4 +163,6 @@ actions:
   - utter_hoc_bong
   - utter_xu_ly_vi_pham
   - utter_teacher_with_name
+  - utter_che_bai
+  - utter_tra_loi_sai
   - action_default_fallback
