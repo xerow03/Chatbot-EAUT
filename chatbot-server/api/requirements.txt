@@ -1,5 +1,5 @@
-fastapi==0.111.0
-python-jose==3.3.0
-bcrypt==4.1.2
-requests==2.32.2
-pymongo==4.3.3
+fastapi
+python-jose
+bcrypt
+requests
+pymongo
