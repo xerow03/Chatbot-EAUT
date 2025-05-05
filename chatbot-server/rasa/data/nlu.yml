@@ -1,5 +1,6 @@
 version: "3.1"
 
+#cvh sua lai noi dung cua tat ca y dinh va them cac y dinh sau:  
 nlu:
 # Chào hỏi
 - intent: greet

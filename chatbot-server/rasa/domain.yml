@@ -5,6 +5,7 @@ session_config:
   carry_over_slots_to_new_session: true
 
 # Khai báo các intent
+#cvh them y dinh: 
 intents:
   - greet
   - thanks
@@ -30,6 +31,7 @@ intents:
   - tra_loi_sai
 
 # Các thực thể
+#cvh them cac thuc the: 
 entities:
   - teacher_name
   - class_name
@@ -49,6 +51,7 @@ slots:
         entity: class_name
     influence_conversation: false
 
+#cvh them cac phan sau: 
 responses:
   # Chào hỏi
   utter_greet:
@@ -143,6 +146,7 @@ responses:
     - text: "Xin lỗi bạn vì đã đem đến trải nghiệm không tốt cho bạn 😢, mình sẽ cố gắng cải thiện nguồn dữ liệu để hỗ trợ bạn tốt hơn."
 
 # Khai báo các actions cho các intent
+#cvh: 
 actions:
   - utter_please_rephrase
   - utter_out_of_scope
