@@ -3,15 +3,14 @@ version: "3.1"
 session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
-
-# Khai báo các intent
-#cvh them y dinh: 
+#cvh đổi tất cả sang tiếng việt và cập nhật thêm: 
+# Khai báo các intent (tiếng Việt)
 intents:
-  - greet
-  - thanks
-  - bye
-  - what_support
-  - teacher_with_name
+  - chao_hoi
+  - cam_on
+  - tam_biet
+  - ho_tro
+  - thong_tin_giang_vien
   - ke_hoach_giang_day_hoc_tap
   - hoc_phan
   - tin_chi
@@ -26,17 +25,16 @@ intents:
   - le_phi_thi
   - hoc_bong
   - xu_ly_vi_pham
-  - out_of_scope
+  - ngoai_pham_vi
   - che_bai
   - tra_loi_sai
 
 # Các thực thể
-#cvh them cac thuc the: 
 entities:
   - teacher_name
   - class_name
 
-# Các slot sử dụng trong trackers
+# Các slot sử dụng trong tracker
 slots:
   teacher_name:
     type: text
@@ -51,111 +49,150 @@ slots:
         entity: class_name
     influence_conversation: false
 
-#cvh them cac phan sau: 
+# Các phản hồi (responses)
 responses:
   # Chào hỏi
-  utter_greet:
-  - text: "Chào bạn 👋, mình là Chatbot EAUT của Trường Đại học Công nghệ Đông Á. Mình có thể giúp gì cho bạn không 😊.\n"
-  - text: "Chào bạn, EAUT rất vui được giúp đỡ bạn, bạn có thắc mắc hay vấn đề gì cần mình hỗ trợ không ạ 😊"
+  utter_chao_hoi:
+    - text: "Chào bạn 👋, mình là Chatbot EAUT của Trường Đại học Công nghệ Đông Á. Mình có thể giúp gì cho bạn không 😊."
+    - text: "Chào bạn, EAUT rất vui được giúp đỡ bạn, bạn có thắc mắc hay vấn đề gì cần mình hỗ trợ không ạ 😊"
 
-  # Cảm ơn có tên sinh viên
-  utter_thanks:
-  - text: "EAUT Chatbot rất vui được hỗ trợ cho bạn, chúc bạn 1 ngày tốt lành 😊.\n"
-  - text: "Rất vui vì có thể giải đáp được thắc mắc của bạn, chúc bạn có một kỳ học tập thật bùng nổ nhaaaaa 🥳"
+  # Cảm ơn
+  utter_cam_on:
+    - text: "EAUT Chatbot rất vui được hỗ trợ cho bạn, chúc bạn 1 ngày tốt lành 😊."
+    - text: "Rất vui vì có thể giải đáp được thắc mắc của bạn, chúc bạn có một kỳ học tập thật bùng nổ nhaaaaa 🥳"
 
   # Tạm biệt
-  utter_bye:
-  - text: "Cảm ơn bạn đã liên hệ, chúc bạn 1 ngày tốt lành 😊.\n"
-  - text: "Tạm biệt bạn, hẹn gặp lại 🤗🤗"
-  - text: "Bye bye, hẹn gặp lại bạn vào lần sau nhaaaaa 🥳"
+  utter_tam_biet:
+    - text: "Cảm ơn bạn đã liên hệ, chúc bạn 1 ngày tốt lành 😊."
+    - text: "Tạm biệt bạn, hẹn gặp lại 🤗"
+    - text: "Bye bye, hẹn gặp lại bạn vào lần sau nhaaaaa 🥳"
 
-  # Trả lời về các vấn đề mà chatbot hỗ trợ
-  utter_what_support:
-  - text: "Xin chào bạn, hiện tại hệ thống Chatbot EAUT của Đại học Công nghệ Đông Á hỗ trợ giải đáp, tư vấn các vấn đề sau đây:\n1.Thông tin học phần, tín chỉ\n2.Nội quy và quy chế\n3.Kế hoạch giảng dạy và học tập\n4.Hình thức dạy học\n5.Đồ án, khoá luận tốt nghiệp, điều kiện bảo vệ đồ án\n6.Học phí, lệ phí thi, học bổng\n7.Học phần và tín chỉ\n8.Chất lượng giảng viên\n9.Thông tin giảng viên\n10.Xử lý vi phạm\n11.Các vấn đề khác liên quan đến khoa Công nghệ thông tin"
-  
-  # Hỏi về các giáo viên
-  utter_teacher_with_name:
-  - text: "Thầy {teacher_name} là giảng viên, giảng viên của Đại học Công nghệ Đông Á.\nThầy hiện đang làm việc, giảng dạy tại khoa Công Nghệ Thông Tin của trường\nVới tinh thần làm việc nghiêm túc, tận tâm, trách nhiệm, thầy dành nhiều thời gian để nghiên cứu, cập nhật kiến thức mới và đầu tư cho chuyên môn cũng như phương pháp dạy học của mình.\nChính vì vậy thầy có một phương pháp dạy học rất hay, dễ hiểu, không gây nhàm chán, nên giờ giảng của thầy luôn sinh động, học sinh tham gia sôi nổi, hiệu quả tiết dạy luôn ở mức cao.\nThầy biết cách lắng nghe, thông cảm, thấu hiểu, bao dung với tất cả học sinh."
-  - text: "Thầy {teacher_name} được đánh giá là một người thầy tận tâm, tận tình, luôn luôn nhiệt tình chỉ bảo sinh viên\nThầy có tính cách hoà đồng, vui tươi, gần gũi, phong cách giảng dạy nhẹ nhàng, dễ hiểu và luôn khiến cho học sinh thích thú. Nhớ vậy mà tiết học của thầy luôn luôn được nhiều sinh viên lựa chọn và đánh giá cao.\nThầy hiện đang làm việc và giảng dạy tại khoa Công nghệ thông tin của Đại học Công nghệ Đông á."
+  # Hỗ trợ các vấn đề
+  utter_ho_tro:
+    - text: >
+        Xin chào bạn, hiện tại hệ thống Chatbot EAUT của Đại học Công nghệ Đông Á hỗ trợ giải đáp, tư vấn các vấn đề sau đây:
+        1. Thông tin học phần, tín chỉ  
+        2. Nội quy và quy chế  
+        3. Kế hoạch giảng dạy và học tập  
+        4. Hình thức dạy học  
+        5. Đồ án, khoá luận tốt nghiệp, điều kiện bảo vệ  
+        6. Học phí, lệ phí thi, học bổng  
+        7. Chất lượng giảng viên  
+        8. Thông tin giảng viên  
+        9. Xử lý vi phạm  
+        10. Các vấn đề khác liên quan đến Khoa CNTT
 
+  # Thông tin giảng viên theo tên
+  utter_thong_tin_giang_vien:
+    - text: >
+        Thầy {teacher_name} là giảng viên của Đại học Công nghệ Đông Á, chuyên ngành Công nghệ Thông tin.  
+        Với phong cách giảng dạy tận tâm, sáng tạo, thầy luôn được sinh viên yêu thích và đánh giá cao.
+    - text: >
+        Thầy {teacher_name} được biết đến là người thầy nhiệt huyết, luôn lắng nghe và hỗ trợ sinh viên.  
+        Giờ giảng luôn sôi nổi, thực hành gắn liền với thực tế, giúp người học tiếp thu nhanh chóng.
+
+  # Xin bạn làm rõ lại
   utter_please_rephrase:
-  - text: "Xin lỗi, hiện tại mình chưa hiểu ý bạn lắm. Bạn có thể hỏi lại được không?"
+    - text: "Xin lỗi, mình chưa hiểu rõ ý bạn lắm. Bạn có thể hỏi lại được không?"
 
-  # Trả lời cho câu hỏi ngoài phạm vi
-  utter_out_of_scope:
+  # Ngoài phạm vi
+  utter_ngoai_pham_vi:
     - text: "Xin lỗi bạn, hiện tại hệ thống Chatbot của EAUT chưa hỗ trợ nội dung này 😢"
-    - text: "Tiếc quá, hiện tại mình chưa hỗ trợ nội dung này nên không giúp bạn được rồi 😢"
-    - text: "Hiện tại mình chỉ hỗ trợ các nội dung liên quan đến các nội quy, quy định... và các vấn đề liên quan đến khoa Công nghệ thông tin của trường, nội dung bạn muốn hỏi có vẻ không nằm trong phạm vi hiểu biết của mình rồi 😭"
+    - text: "Mình chưa có thông tin về vấn đề này, mong bạn thông cảm 😭"
 
-  # Trả lời cho câu hỏi về học phần
+  # Học phần
   utter_hoc_phan:
-    - text: "Học phần\nMột học phần có khối lượng từ 1 đến 4 tín chỉ, trừ một số học phần đặc biệt như thực tập kỹ thuật, tốt nghiệp từ 3 đến 6 tín chỉ/học phần, khoá luận/Đồ án tốt nghiệp có khối lượng từ 6 đến 12 tín chỉ.\nCác loại học phần \na) Học phần bắt buộc: Là học phần chứa đựng những nội dung kiến thức chính yếu của mỗi chương trình đào tạo và bắt buộc sinh viên phải tích luỹ\nb) Học phần tự chọn: Là học phần chứa đựng những nội dung kiến thức cần thiết, nhưng sinh viên được tự chọn theo hướng dẫn của trường nhắm đa dạng hoá chuyên môn.\nc) Học phần tiên quyết: Học phần A là học phần tiên quyết của học phần B, nếu sinh viên muốn đăng ký học học phần B thì học phần A sinh viên đã phải học và đạt điểm D trở lên\nd) Học phần song hành: Học phần A là học phần song hành của học phần B khi điều kiện để đăng ký học phần B là sinh viên đã đăng ký hoăc đang học học phần A\ne) Học phần tương đương và học phần thay thế: Học phần tương đương là một hay một nhóm học phần thuộc chương trình đào tạo của ngành A được phép tích lũy để thay cho một hay một nhóm học phần trong chương trình đào tạo của ngành B. Học phần tương đương phải có nội dung giống ít nhất 80% và có số tín chỉ bằng hoặc lớn hơn học phần xem xét; Học phần thay thế là học phần được sử dụng thay thế cho một học phần có trong trong chương trình đào tạo nhưng nay không còn tổ chức giảng dạy nữa hoặc học phần tự chọn thay cho một học phần tự chọn khác mà sinh viên đã thi không đạt yêu cầu. Các học phần tương đương hay thay thế do Trưởng Khoa đề xuất, là học phần bổ sung cho chương trình đào tạo trong quá trình thực hiện.\nf) Học phần điều kiện là các học phần giáo dục thể chất, giáo dục quốc phòng-an ninh. Kết quả đánh giá các học phần điều kiện không tính vào điểm trung bình chung học kỳ, điểm trung bình chung các học phần và điểm trung bình chung tích lũy, nhưng là điều kiện để xét tốt nghiệp. Điểm đạt của các học phần điều kiện là P (theo thang điểm chữ)."
+    - text: >
+        Học phần là đơn vị kiến thức trong chương trình đào tạo, mỗi học phần có 1–4 tín chỉ (trừ thực tập, đồ án từ 3–12 tín chỉ).  
+        Có các loại: bắt buộc, tự chọn, tiên quyết, song hành, tương đương, thay thế và điều kiện.
 
-  # Trả lời cho câu hỏi về tín chỉ
+  # Tín chỉ
   utter_tin_chi:
-    - text: "Tín chỉ\na) Tín chỉ là đơn vị dùng để đo lường khối lượng kiến thức và kỹ năng trong chương trình đào tạo, đồng thời là đơn vị dùng để đánh giá khối lượng học tập của sinh viên;\nb) Một tín chỉ được tính tương đương 50 giờ học tập định mức của người học, bao gồm cả thời gian dự giờ giảng, giờ học có hướng dẫn, tự học, nghiên cứu, trải nghiệm và dự kiểm tra, đánh giá;\nc) Một tín chỉ được quy định bằng 15 tiết học lý thuyết; 30 tiết thực hành, thí nghiệm, đồ án môn học và ĐATN/KLTN;\nd) Một tiết học lý thuyết, thực hành có thời lượng được tính bằng 50 phút."
+    - text: >
+        Tín chỉ là đơn vị đo khối lượng học tập, tương đương 15 tiết lý thuyết hoặc 30 tiết thực hành, 50 giờ toàn bộ công việc học.
 
-  # Trả lời cho câu hỏi về phương thức đào tạo
+  # Phương thức tổ chức đào tạo
   utter_phuong_thuc_to_chuc_dao_tao:
-    - text: "Phương thức tổ chức đào tạo\nTrường áp dụng phương thức tổ chức đào tạo theo tín chỉ đối với đào tạo trình độ đại học hình thức chính quy, cụ thể:\n1. Tổ chức đào tạo theo từng lớp học phần, cho phép sinh viên tích lũy tín chỉ của từng học phần và thực hiện chương trình đào tạo theo kế hoạch học tập của cá nhân, phù hợp với kế hoạch giảng dạy của Trường;\n2. Sinh viên không đạt một học phần bắt buộc sẽ phải học lại học phần đó hoặc học một học phần tương đương theo quy định trong chương trình đào tạo, hoặc học một học phần thay thế nếu học phần đó không còn được giảng dạy;\n3. Sinh viên không đạt một học phần tự chọn sẽ phải học lại học phần đó hoặc có thể chọn học một học phần tự chọn khác theo quy định trong chương trình đào tạo."
+    - text: >
+        Trường áp dụng đào tạo theo tín chỉ chính quy.  
+        Sinh viên tích luỹ tín chỉ theo kế hoạch cá nhân, có thể học lại hoặc thay thế nếu không đạt.
 
-  # Trả lời cho câu hỏi về hình thức đào tạo
+  # Hình thức đào tạo
   utter_hinh_thuc_dao_tao:
-    - text: "Hình thức đào tạo\nHình thức đào tạo chính quy\n1. Các hoạt động giảng dạy được thực hiện tại Trường, riêng những hoạt động thực hành, thực tập, trải nghiệm thực tế và giảng dạy trực tuyến có thể thực hiện ngoài Trường.\n2. Thời gian tổ chức hoạt động giảng dạy trong khoảng từ 07 giờ đến 20 giờ các ngày trong tuần từ thứ 2 đến thứ 7; thời gian tổ chức những hoạt động đặc thù của chương trình đào tạo được thực hiện theo quy định của Trường. Hiệu trưởng quy định thời gian tổ chức hoạt động giảng dạy và những hoạt động đặc thù của chương trình đào tạo của trường phù hợp với thực tế của trường."
+    - text: >
+        Hình thức đào tạo chính quy:  
+        - Giảng dạy tại trường và trực tuyến, thực tập ngoài trường.  
+        - Thời gian: 07:00–20:00 từ Thứ 2–7.
 
-  # Trả lời cho câu hỏi về kế hoạch giảng dạy, học tâp
+  # Kế hoạch giảng dạy và học tập
   utter_ke_hoach_giang_day_hoc_tap:
-    - text: "Kế hoạch giảng dạy và học tập\n1. Trường tổ chức đào tạo theo năm học và học kỳ\na) Một năm học có 02 học kỳ chính (học kỳ I và II) và một học kỳ phụ (tổ chức trong hè) với tổng số tối thiểu 30 tuần lên lớp. Trong năm học, Nhà trường tổ chức thêm một số đợt học bổ sung để đáp ứng nhu cầu của sinh viên; kế hoạch tổ chức đợt học bổ sung sẽ được thông báo trước khi bắt đầu học ít nhất 3 tuần.\nb) Mỗi học kỳ chính có ít nhất 10 tuần lên lớp và 3 tuần dự trữ và thi; mỗi học kỳ phụ có ít nhất 4 tuần lên lớp và 1 tuần thi. Thời gian giảng dạy, học tập và thi cụ thể của từng học kỳ do Hiệu trưởng quy định.\n2. Trước khi bắt đầu mỗi học kỳ, căn cứ vào kế hoạch đào tạo năm học đã được Hiệu trưởng phê duyệt, Phòng Đào tạo lập danh sách các lớp học phần, xây dựng thời khóa biểu dự kiến của các lớp học phần trong học kỳ và gửi về Khoa/Viện. Khoa/Viện tổ chức phân công giảng viên giảng dạy các lớp học phần.\n3. Sau khi hoàn thành việc nhập liệu, kiểm tra, rà soát thời khóa biểu Phòng Đào tạo gửi thông báo thời khóa biểu tới các đơn vị, giảng viên, sinh viên trong toàn trường ít nhất 02 tuần trước khi bắt đầu học kỳ.\n4. Thời khóa biểu thể hiện thời gian, địa điểm, hoạt động dạy và học của từng lớp thuộc các khóa học, hình thức và CTĐT. Thời khóa biểu của các lớp học phần bình thường được bố trí đều trong các tuần của học kỳ. Trong trường hợp cần thiết phải xếp lịch học tập trung thời gian, số giờ giảng đối với một học phần bất kỳ không vượt quá 15 giờ/tuần và 4 giờ/ngày.\n5. Mỗi ngày học có tối đa 15 giờ học (tiết học), mỗi tiết học 50 phút."
+    - text: >
+        Kế hoạch:  
+        - Năm học có 2 học kỳ chính và 1 học kỳ hè, tổng tối thiểu 30 tuần lên lớp.  
+        - Thời khóa biểu được thông báo trước 2 tuần.
 
-  # Trả lời cho câu hỏi về đồ án, khóa luận
+  # Đồ án/khóa luận
   utter_do_an_khoa_luan:
-    - text: "Đồ án/khóa luận tốt nghiệp (ĐATN/KLTN)\n1. Học phần ĐATN/KLTN là học phần đặc biệt có khối lượng được quy định trong CTĐT cụ thể của từng ngành, được thực hiện ở học kỳ cuối cùng của khóa học.\n2. Những sinh viên có đủ các điều kiện sau thì được xét nhận đồ án tốt nghiệp/khóa luận tốt nghiệp (ĐATN/KLTN), cho đến thời điểm xét nhận ĐATN/KLTN:\na) Sinh viên không bị kỷ luật từ mức đình chỉ học tập, không bị truy cứu trách nhiệm hình sự.\nb) Sinh viên được đăng ký làm đồ án/khóa luận tốt nghiệp nếu không nợ quá 06 tín chỉ so với yêu cầu của CTĐT, không tính tín chỉ của TTTN và ĐATN/KLTN. \nc) Được xếp trình độ năm cuối của khoá học theo kế hoạch học tập chuẩn toàn khoá quy định tại khoản 2 Điều 15 của Quy chế này; không thuộc diện bị cảnh báo học tập;\nd) Có điểm rèn luyện đạt từ 50 điểm trở lên;\ne) Không vi phạm thời gian tối đa hoàn thành khoá học;\nf) Hoàn thành nghĩa vụ tài chính theo quy định;\ng) Được khoa/viện chủ quản đề xuất, Trưởng Khoa/Viện chịu trách nhiệm về việc tổ chức giao nhận đề tài và giảng viên hướng dẫn ĐATN/KLTN cho sinh viên theo đúng qui định của Bộ Giáo dục và Đào tạo, của Nhà trường. Hiệu trưởng phê duyệt Tờ trình danh sách sinh viên đủ điều kiện được làm ĐATN/KLTN và danh sách giảng viên hướng dẫn thông qua Phòng Đào tạo.\nh) Thời gian thực hiện ĐATN/KLTN được quy định trong CTĐT của các ngành đã được Hiệu trưởng phê duyệt.\ni) Hình thức, nội dung, quy trình thực hiện và chấm ĐATN/KLTN; Trưởng Khoa/Viện chịu trách nhiệm về tiêu chuẩn và nhiệm vụ của giảng viên hướng dẫn, giảng viên phản biện; trách nhiệm của Khoa/Viện đối với sinh viên trong thời gian thực hiện ĐATN/KLTN đối với các ngành đào tạo theo đúng qui định của Bộ Giáo dục & Đào tạo."
+    - text: >
+        Đồ án/Khóa luận tốt nghiệp thực hiện ở học kỳ cuối, có điều kiện ràng buộc về tín chỉ, kỷ luật, tài chính và đề tài do khoa/phòng đào tạo duyệt.
 
-  # Trả lời cho câu hỏi về điều kiện bảo vệ
+  # Điều kiện bảo vệ Đồ án/KLTN
   utter_dieu_kien_bao_ve:
-    - text: "Điều kiện sinh viên được bảo vệ Đồ án/khoá luận tốt nghiệp (ĐATN/KLTN)\na) Tích lũy đạt đủ số tín chỉ đã quy định trong chương trình đào tạo của ngành (không tính tín chỉ ĐATN/KLTN).\nb) Điểm các học phần đạt điểm D trở lên.\nc) Điểm trung bình tích lũy (TBTL) toàn khoá đạt từ 2,0 trở lên (thang 4);\nd) Đã hoàn thành đầy đủ nghĩa vụ tài chính đối với nhà trường;\ne) Đã được giao đề tài ĐATN/KLTN tốt nghiệp theo Quyết định của Hiệu trưởng;\nf) Đã hoàn thành ĐATN/KLTN và có đơn xin bảo vệ có sự đồng ý của giảng viên hướng dẫn và của trưởng khoa chuyên môn;\ng) Đã có tên trong danh sách tại Quyết định thành lập hội đồng bảo vệ ĐATN/KLTN của Hiệu trưởng."
+    - text: >
+        Điều kiện bảo vệ:  
+        1. Tích luỹ đủ tín chỉ (không tính ĐATN/KLTN).  
+        2. Điểm các học phần ≥ D, TBTL ≥ 2.0.  
+        3. Hoàn thành tài chính, đề tài được duyệt, có đơn xin bảo vệ.
 
-  # Trả lời cho câu hỏi về đồ án khóa luận
+  # Đánh giá Đồ án/KLTN
   utter_danh_gia_do_an_khoa_luan:
-    - text: "Đánh giá ồ án/khoá luận tốt nghiệp (ĐATN/KLTN)\na) Trưởng Khoa/Viện lập danh sách sinh viên đủ điều kiện bảo vệ, kèm danh sách Hội đồng chấm ĐATN/KLTN gửi phòng Đào tạo trước ngày bảo vệ 01 tháng, theo đúng quy trình bảo vệ tốt nghiệp hiện hành của Trường. Phòng Đào tạo làm tờ trình gửi Hiệu trưởng phê duyệt.\nb) Hội đồng chấm ĐATN/KLTN gồm 03 thành viên là các giảng viên đủ tiêu chuẩn theo qui định, giảng viên hướng dẫn không tham gia Hội đồng. Mỗi thành viên chấm theo thang 10, lấy lẻ đến 0,5 điểm. Điểm chấm ĐATN/KLTN của Hội đồng là trung bình cộng điểm chấm của 03 thành viên lấy lẻ đến 0,1 điểm;\nc) Điểm ĐATN/KLTN được tính vào điểm trung bình tích lũy toàn khóa học và được chấm theo thang 10, lấy lẻ đến 0,1 điểm và được tính từ 02 thành phần: (i) Điểm do giảng viên hướng dẫn chấm theo thang 10, lấy lẻ đến 0,5 điểm chiếm 30%; và (ii) Điểm do Hội đồng chấm chiếm 70%;\nd) Hội đồng chấm ĐATN/KLTN theo hình thức trực tiếp hoặc trực tuyến.\ne) Điểm kết quả ĐATN/KLTN từ 5,0 điểm (thang điểm 10) trở lên là đạt. Trường hợp điểm kết quả ĐATN/KLTN dưới 5,0 điểm (thang điểm 10) sinh viên phải thực hiện chỉnh sửa, hoàn thiện lại ĐATN/KLTN và bảo vệ lại sau thời gian từ 03-06 tháng."
+    - text: >
+        Đánh giá:  
+        - Hội đồng 3 giảng viên chấm theo thang 10; 30% do hướng dẫn, 70% do hội đồng.  
+        - Đạt ≥ 5.0 mới được công nhận.
 
-  # Trả lời cho câu hỏi về học phí
+  # Học phí
   utter_hoc_phi:
-    - text: "Học phí\n1. Học phí tín chỉ được xác định căn cứ theo chi phí của các hoạt động giảng dạy học tập, cơ sở vật chất tính cho một tín chỉ. Học phí được thu theo học kỳ và được xác định theo số tín chỉ mà sinh viên đã đăng ký trong học kỳ đó. Mức học phí do Hiệu trưởng trường quy định cho từng bậc học, hệ đào tạo, theo ngành đào tạo, khối kiến thức theo từng năm học.\n2. Sinh viên có nghĩa vụ nộp học phí đầy đủ và đúng thời hạn theo quy định về mức học phí và lịch thu học phí của Trường. Học phí của các học phần sinh viên đã đăng ký được thông báo trên cổng thông tin sinh viên.\n3. Sinh viên không hoàn thành đầy đủ nghĩa vụ nộp học phí sẽ bị đình chỉ đăng ký học tập một học kỳ kế tiếp. Sinh viên tiếp tục bị đình chỉ lần thứ 2 do không hoàn thành đầy đủ nghĩa vụ nộp học phí sẽ bị xem xét buộc thôi học.\n4. Sinh viên thuộc diện: con thương binh, liệt sỹ, gia đình có công với cách mạng và bộ đội/công an xuất ngũ; miễn hay giảm học phí theo các chính sách chung của nhà nước; khó khăn đột xuất – không có khả năng đóng học phí cho một học kỳ chính làm hồ sơ nộp cho Phòng CTSV theo thời gian quy định.\n5. Sinh viên không được xét miễn giảm học phí học kỳ hè, học phí học lại học phần, học cải thiện điểm, học ngoài CTĐT và học quá thời gian thiết kế của CTĐT."
+    - text: >
+        Học phí tín chỉ tính theo chi phí đào tạo, thu theo kỳ.  
+        Sinh viên chậm nộp sẽ bị đình chỉ học.  
+        Các chính sách miễn giảm áp dụng theo quy định Nhà nước.
 
-  # Trả lời cho câu hỏi về lệ phí thi
+  # Lệ phí thi
   utter_le_phi_thi:
-    - text: "Lệ phí thi\nSinh viên không phải nộp lệ phí thi cho học phần đăng ký học; sinh viên phải nộp lệ phí các kỳ thi phụ theo quy định của nhà trường."
+    - text: "Sinh viên không phải nộp lệ phí thi theo học phần; chỉ phải nộp lệ phí thi phụ."
 
-  # Trả lời cho câu hỏi về học bổng
+  # Học bổng
   utter_hoc_bong:
-    - text: "Học bổng\n1. Hàng năm, nhà trường xét cấp học bổng cho sinh viên đạt thành tích cao trong học tập và có tư cách đạo đức tốt, không vi phạm kỷ luật;\n2. Tiêu chí đánh giá về Điểm trung bình tích lũy và Điểm rèn luyện;\n3. Tiêu chuẩn cụ thể của các mức học bổng phụ thuộc vào từng khóa học và ngành học theo quy định của Trường;\n4. Sinh viên có thành tích tốt trong các hoạt động phong trào, đạt thành tích cao trong các cuộc thi, sinh viên có hoàn cảnh khó khăn sẽ được ưu tiên khi xét học bổng."
+    - text: >
+        Học bổng xét theo TBTL và điểm rèn luyện.  
+        Ưu tiên sinh viên có thành tích học tập và đóng góp hoạt động phong trào.
 
-  # Trả lời cho câu hỏi về xử lý vi phạm
+  # Xử lý vi phạm
   utter_xu_ly_vi_pham:
-    - text: "Xử lý kỷ luật đối với sinh viên vi phạm các quy định về thi, kiểm tra\n. Trong khi dự kiểm tra thường xuyên, chuẩn bị tiểu luận, bài tập lớn, thi giữa học phần, thi kết thúc học phần, chuẩn bị đồ án/khóa luận tốt nghiệp, nếu vi phạm quy chế, sinh viên sẽ bị xử lý kỷ luật đối với từng học phần đã vi phạm.\n2. Sinh viên thi hộ hoặc nhờ người thi hộ đều bị kỷ luật ở mức đình chỉ học tập 01 năm đối với trường hợp vi phạm lần thứ nhất và buộc thôi học đối với trường hợp vi phạm lần thứ hai.\n. Tùy theo tính chất và mức độ vị phạm, sinh viên có thể còn bị xử lý theo các quy định liên quan khác của Nhà trường.\nĐiều 31. Xử lý kỷ luật đối với sinh viên sử dụng hồ sơ, văn bằng, chứng chỉ giả Người học sử dụng hồ sơ, văn bằng, chứng chỉ giả làm điều kiện trúng tuyển hoặc điều kiện tốt nghiệp sẽ bị buộc thôi học; văn bằng tốt nghiệp nếu đã được cấp sẽ bị thu hồi, huỷ bỏ.\nXử lý kỷ luật đối với sinh viên tự ý bỏ học\nSinh viên tự ý bỏ học không có lý do chính đáng ở học kỳ nào sẽ bị đình chỉ học tập ở học kỳ đó và học kỳ tiếp theo. Những sinh viên này muốn quay trở lại học phải làm đơn gửi Hiệu trưởng xin tiếp nhận trở lại. Sau 2 học kỳ tính từ khi hết học kỳ bị đình chỉ, nếu sinh viên không có đơn xin tiếp nhận trở lại học tập, sẽ bị xóa tên khỏi danh sách sinh viên của Nhà trường."
+    - text: >
+        Vi phạm thi cử, sử dụng văn bằng giả, bỏ học không lý do sẽ bị kỷ luật:  
+        - Đình chỉ 1 năm lần đầu, buộc thôi học lần hai.  
+        - Các trường hợp khác xử lý theo quy định.
 
-  # Trả lời cho câu hỏi về trả lời sai
-  utter_tra_loi_sai:
-    - text: "Mình xin lỗi, có vẻ như mình đã trả lời không đúng với ý của bạn 😢, mình sẽ cố gắng cải thiện hơn ạ."
-    - text: "Xin lỗi bạn vì sự nhầm lẫn của mình 😢, mình sẽ cố gắng cải thiện nguồn dữ liệu để hỗ trợ bạn tốt hơn."
-
-  # Trả lời cho sư chê bai của người dùng
+  # Phê bình/chê bai
   utter_che_bai:
-    - text: "Mình xin lỗi vì sự không hài lòng của bạn 😢, mình sẽ cố gắng cải thiện hơn ạ."
-    - text: "Xin lỗi bạn vì đã đem đến trải nghiệm không tốt cho bạn 😢, mình sẽ cố gắng cải thiện nguồn dữ liệu để hỗ trợ bạn tốt hơn."
+    - text: "Mình xin lỗi vì đã làm bạn không hài lòng 😢, mình sẽ cố gắng cải thiện."
 
-# Khai báo các actions cho các intent
-#cvh: 
+  # Trả lời sai
+  utter_tra_loi_sai:
+    - text: "Xin lỗi bạn, mình trả lời chưa đúng ý. Mình sẽ cố gắng cải thiện hơn ạ."
+
+# Khai báo action
 actions:
   - utter_please_rephrase
-  - utter_out_of_scope
-  - utter_greet
-  - utter_bye
-  - utter_thanks
+  - utter_ngoai_pham_vi
+  - utter_chao_hoi
+  - utter_tam_biet
+  - utter_cam_on
   - utter_tin_chi
   - utter_hoc_phan
-  - utter_what_support
+  - utter_ho_tro
   - utter_phuong_thuc_to_chuc_dao_tao
   - utter_hinh_thuc_dao_tao
   - utter_ke_hoach_giang_day_hoc_tap
@@ -166,7 +203,7 @@ actions:
   - utter_le_phi_thi
   - utter_hoc_bong
   - utter_xu_ly_vi_pham
-  - utter_teacher_with_name
+  - utter_thong_tin_giang_vien
   - utter_che_bai
   - utter_tra_loi_sai
   - action_default_fallback

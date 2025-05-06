@@ -1,42 +1,42 @@
 version: "3.1"
-# Các stories
-#cvh: 
+
+#cvh đổi tất cả sang tiếng việt và cập nhật thêm các câu chuyện sau: 
 stories:
   # Story chào hỏi
-  - story: respond to greet
+  - story: chao_hoi
     steps:
-    - intent: greet
-    - action: utter_greet
+    - intent: chao_hoi
+    - action: utter_chao_hoi
 
   # Story cảm ơn
-  - story: respond to thanks
+  - story: cam_on
     steps:
-    - intent: thanks
-    - action: utter_thanks
+    - intent: cam_on
+    - action: utter_cam_on
 
   # Story tạm biệt
-  - story: respond to bye
+  - story: tam_biet
     steps:
-    - intent: bye
-    - action: utter_bye
+    - intent: tam_biet
+    - action: utter_tam_biet
 
-  # Story hỗ trợ gì
-  - story: respond to what_support
+  # Story hỗ trợ
+  - story: ho_tro
     steps:
-    - intent: what_support
-    - action: utter_what_support
+    - intent: ho_tro
+    - action: utter_ho_tro
 
   # Story kế hoạch giảng dạy và học tập
-  - story: respond to ke_hoach_giang_day_hoc_tap
+  - story: ke_hoach_giang_day_hoc_tap
     steps:
     - intent: ke_hoach_giang_day_hoc_tap
     - action: utter_ke_hoach_giang_day_hoc_tap
 
-  # Story giáo viên
-  - story: respond to teacher
+  # Story thông tin giảng viên
+  - story: thong_tin_giang_vien
     steps:
-    - intent: teacher_with_name
-    - action: utter_teacher_with_name
+    - intent: thong_tin_giang_vien
+    - action: utter_thong_tin_giang_vien
 
   # Story học phần
   - story: hoc_phan
@@ -57,93 +57,87 @@ stories:
     - action: utter_hoc_phan
     - action: utter_tin_chi
 
-  # Story phương thức tổ chức và đào tạo
-  - story: respond to phuong_thuc_to_chuc_dao_tao
+  # Story phương thức tổ chức đào tạo
+  - story: phuong_thuc_to_chuc_dao_tao
     steps:
     - intent: phuong_thuc_to_chuc_dao_tao
     - action: utter_phuong_thuc_to_chuc_dao_tao
 
   # Story hình thức đào tạo
-  - story: respond to hinh_thuc_dao_tao
+  - story: hinh_thuc_dao_tao
     steps:
     - intent: hinh_thuc_dao_tao
     - action: utter_hinh_thuc_dao_tao
 
-  # Story đồ án khóa luận
-  - story: respond to do_an_khoa_luan
+  # Story đồ án/khóa luận
+  - story: do_an_khoa_luan
     steps:
     - intent: do_an_khoa_luan
     - action: utter_do_an_khoa_luan
 
   # Story điều kiện bảo vệ
-  - story: respond to dieu_kien_bao_ve
+  - story: dieu_kien_bao_ve
     steps:
     - intent: dieu_kien_bao_ve
     - action: utter_dieu_kien_bao_ve
 
   # Story đồ án và điều kiện bảo vệ
-  - story: respond to do_an_va_dieu_kien_bao_ve
+  - story: do_an_va_dieu_kien_bao_ve
     steps:
     - intent: do_an_va_dieu_kien_bao_ve
     - action: utter_dieu_kien_bao_ve
     - action: utter_do_an_khoa_luan
-  
+
   # Story đánh giá đồ án, khóa luận
-  - story: respond to danh_gia_do_an_khoa_luan
+  - story: danh_gia_do_an_khoa_luan
     steps:
     - intent: danh_gia_do_an_khoa_luan
     - action: utter_danh_gia_do_an_khoa_luan
 
   # Story học phí
-  - story: respond to hoc_phi
+  - story: hoc_phi
     steps:
     - intent: hoc_phi
     - action: utter_hoc_phi
 
   # Story lệ phí thi
-  - story: respond to le_phi_thi
+  - story: le_phi_thi
     steps:
     - intent: le_phi_thi
     - action: utter_le_phi_thi
 
   # Story học bổng
-  - story: respond to hoc_bong
+  - story: hoc_bong
     steps:
     - intent: hoc_bong
     - action: utter_hoc_bong
 
   # Story xử lý vi phạm
-  - story: respond to xu_ly_vi_pham
+  - story: xu_ly_vi_pham
     steps:
     - intent: xu_ly_vi_pham
     - action: utter_xu_ly_vi_pham
 
   # Story chê bai
-  - story: respond to che_bai
+  - story: che_bai
     steps:
     - intent: che_bai
     - action: utter_che_bai
 
   # Story trả lời sai
-  - story: respond to tra_loi_sai
+  - story: tra_loi_sai
     steps:
     - intent: tra_loi_sai
     - action: utter_tra_loi_sai
 
-  # Story ngoài phạm vi xử lý
-  - story: out-of-scope
+  # Story ngoài phạm vi
+  - story: ngoai_pham_vi
     steps:
-    - intent: out_of_scope
-    - action: utter_out_of_scope
-  
-  # Story yêu cầu hỏi lại khi độ tin cậy thấp
-  - story: response to please_rephrase
-    steps:
-    - intent: nlu_fallback
-    - action: utter_please_rephrase
+    - intent: ngoai_pham_vi
+    - action: utter_ngoai_pham_vi
 
-  # Story nâng cao
-  - story: response to please_rephrase
+  # Story fallback NLU (yêu cầu hỏi lại)
+  - story: fallback_nlu
     steps:
     - intent: nlu_fallback
     - action: utter_please_rephrase

@@ -1,10 +1,18 @@
 version: "3.1"
 
-#cvh sua lai noi dung cua tat ca y dinh va them cac y dinh sau:  
+#cvh sua lai noi dung cua tat ca y dinh va them cac y dinh sau:
 nlu:
 # Chào hỏi
-- intent: greet
+- intent: chao_hoi
   examples: |
+    - chào [Trường Đại học Công nghệ Đông Á]{"entity":"organization"} ạ
+    - xin chào
+    - em chào thầy/cô
+    - bot ơi, cho em hỏi
+    - cho em hỏi ạ
+    - alo, có ai hỗ trợ không ạ?
+    - em muốn được tư vấn ạ
+
     - em xin chào [trường đại học công nghệ đông á]{"entity":"organization"} a
     - ê
     - hí
@@ -273,8 +281,13 @@ nlu:
     - alo ad ơi!!
 
 # Tạm biệt
-- intent: thanks
+- intent: cam_on
   examples: |
+    - cảm ơn ad
+    - em cảm ơn nhé
+    - ok, cảm ơn bạn
+    - vâng, em cảm ơn ạ
+    - thanks ad
     - ok
     - em cám ơn ad nhiều ạ
     - yêu add quá đi
@@ -463,9 +476,14 @@ nlu:
     - à em biết rồi em cảm ơn ạ
     - em xin cảm ơn!
 
-# Tạ biệt
-- intent: bye
+# Tạmm biệt
+- intent: tam_biet
   examples: |
+    - tạm biệt
+    - hẹn gặp lại
+    - bye
+    - mình đi đây
+    - đi ngủ đây
     - bye 
     - bái bai
     - đi đây
@@ -486,8 +504,13 @@ nlu:
     - đi đây
 
 # Hỏi Chatbot hỗ trợ gì
-- intent: what_support
+- intent: ho_tro
   examples: |
+    - bạn hỗ trợ gì
+    - chatbot làm gì được
+    - chức năng của bot
+    - mình có thể hỏi gì
+    - bạn giúp được gì cho mình
     - bạn có thể hỗ trợ gì
     - tác dụng của bạn là gì
     - mày có tác dụng gì
@@ -526,8 +549,13 @@ nlu:
     - bạn có thể trả lời những câu hỏi nào
 
 # Giáo viên
-- intent: teacher_with_name
+- intent: thong_tin_giang_vien
   examples: |
+    - thầy [Lê Trung Thực](teacher_name)
+    - cô [Ngô Thị Hoa](teacher_name)
+    - giới thiệu giảng viên [Nguyễn Thị Thúy Nga](teacher_name)
+    - thông tin về [Phạm Thị Loan](teacher_name)
+    - giáo viên [Lê Mai Nam](teacher_name)
     - [Lê Trung Thực](teacher_name)
     - khoa cntt [Lê Trung Thực](teacher_name)
     - khoa công nghệ thông tin [Lê Trung Thực](teacher_name)
@@ -578,8 +606,12 @@ nlu:
     - cô [Nguyễn Thị Thúy Nga](teacher_name) giảng như thế nào
 
 # Chương trình đào tạo
-- intent: ke_hoach_giang_day_hoc_tap
+- intent: ke_hoach_hoc_tap
   examples: |
+    - kế hoạch giảng dạy và học tập
+    - chương trình đào tạo
+    - kế hoạch học tập của trường
+    - lịch học kỳ mới
     - kế hoạch giảng dạy
     - kế hoạch học tập
     - kế hoạch giảng dạy và học tập
@@ -599,6 +631,9 @@ nlu:
 # Học phần
 - intent: hoc_phan
   examples: |
+    - học phần là gì
+    - giải thích học phần
+    - trường có các học phần nào
     - tôi muốn hỏi về học phần
     - giải thích học phần
     - mình muốn hỏi học phần
@@ -626,6 +661,9 @@ nlu:
 # Tín chỉ
 - intent: tin_chi
   examples: |
+    - tín chỉ là gì
+    - một tín chỉ bằng bao nhiêu giờ
+    - cho em biết về tín ch
     - tín chỉ
     - thế nào là tín chỉ
     - cho hỏi về tín chỉ
@@ -659,6 +697,9 @@ nlu:
 # Học phần
 - intent: hoc_phan_va_tin_chi
   examples: |
+    - học phần và tín chỉ là gì
+    - tư vấn học phần, tín chỉ
+    - cho em hỏi về học phần và tín chỉ
     - học phần, tín chỉ
     - thế nào là học phần, tín chỉ
     - học phần và tín chỉ là sao
@@ -681,6 +722,9 @@ nlu:
 # Hình thức đào tạo
 - intent: hinh_thuc_dao_tao
   examples: |
+    - hình thức đào tạo của trường
+    - trường có những hình thức nào
+    - hình thức đào tạo là gì
     - hình thức đào tạo của trường đại học là gì?
     - có bao nhiêu hình thức đào tạo trong trường đại học?
     - hình thức đào tạo có những loại nào?
@@ -695,8 +739,11 @@ nlu:
     - trường có một hình thức đào tạo à
 
 # Phương thức tổ chức và đào tạo
-- intent: phuong_thuc_to_chuc_dao_tao
+- intent: phuong_thuc_dao_tao
   examples: |
+    - phương thức tổ chức đào tạo
+    - tổ chức đào tạo như thế nào
+    - cách trường đào tạo sinh viên
     - tổ chức, đào tạo
     - phương thức đào tạo
     - phương thức tổ chức, đào tạo
@@ -720,6 +767,9 @@ nlu:
 # Đồ án/khoá luận tốt nghiệp
 - intent: do_an_khoa_luan
   examples: |
+    - đồ án tốt nghiệp là gì
+    - khóa luận tốt nghiệp
+    - thông tin về đồ án tốt nghiệp
     - đồ án, khoá luận tốt nghiệp là gì
     - đồ án tốt nghiệp 
     - khoá luận tốt nghiệp
@@ -749,6 +799,9 @@ nlu:
 # Điều kiện bảo vệ đồ án tốt nghiệp
 - intent: dieu_kien_bao_ve
   examples: |
+    - điều kiện bảo vệ đồ án
+    - làm sao để bảo vệ khóa luận
+    - em muốn biết điều kiện bảo vệ đồ án tốt nghiệp
     - điều kiện bảo vệ đồ án tốt nghiệp
     - bảo vệ đồ án tốt nghiệp
     - điều kiện bảo vệ đồ án
@@ -765,8 +818,10 @@ nlu:
     - bảo vệ khoá luận tốt nghiệp, đồ án
 
 # Đồ án và điều kiện bảo vệ
-- intent: do_an_va_dieu_kien_bao_ve
+- intent: do_an_va_dieu_kien
   examples: |
+    - đồ án và điều kiện bảo vệ
+    - tư vấn đồ án và điều kiện bảo vệ
     - đồ án và điều kiện bảo vệ
     - bảo vệ tốt nghiệp
     - khoá luận và điều kiện bảo vệ
@@ -780,8 +835,11 @@ nlu:
     - khoá luận tốt nghiệp, bảo vệ khoá luận tốt nghiệp
 
 # Đánh giá khoá luận
-- intent: danh_gia_do_an_khoa_luan
+- intent: danh_gia_do_an
   examples: |
+    - đánh giá đồ án tốt nghiệp
+    - cách chấm điểm khóa luận
+    - hội đồng đánh giá đồ án như thế nà
     - đánh giá khoá luận
     - các thầy cô chấm điểm khoá luận như thế nào
     - đánh giá khoá luận như thế nào
@@ -806,6 +864,9 @@ nlu:
 # Học phí
 - intent: hoc_phi
   examples: |
+    - học phí một kỳ bao nhiêu
+    - cho em hỏi học phí trường
+    - học phí CNTT là bao nhiêu
     - học phí
     - làm thế nào để xem học phí
     - trường thu học phí
@@ -827,6 +888,9 @@ nlu:
 
 - intent: le_phi_thi
   examples: |
+    - lệ phí thi là gì
+    - thi lại có mất phí không
+    - cho em biết lệ phí thi
     - lệ phí thi
     - một lần thi tốn bao nhiêu tiền
     - thi qua môn có cần tiền không
@@ -849,6 +913,9 @@ nlu:
 
 - intent: hoc_bong
   examples: |
+    - điều kiện nhận học bổng
+    - trường có học bổng không
+    - làm sao để xin học bổng
     - học bổng
     - quy chế học bổng
     - em muốn nhận học bổng
@@ -878,6 +945,9 @@ nlu:
 # Xử lý vi pham
 - intent: xu_ly_vi_pham
   examples: |
+    - vi phạm nội quy bị phạt sao
+    - gian lận thi cử bị xử lý thế nào
+    - trường kỷ luật sinh viên như thế nào
     - vi phạm nội quy
     - vi phạm kỷ luât
     - trường sẽ phạt học sinh thế nào khi vi phạm kỷ luật
@@ -914,6 +984,9 @@ nlu:
 # Chê bai chatbot
 - intent: che_bai
   examples: |
+    - bạn dốt quá
+    - mày ngu quá
+    - trả lời sai rồi
     - mày ngu quá
     - mày dốt quá
     - bạn dốt quá
@@ -931,6 +1004,9 @@ nlu:
 # Bot trả lời sai
 - intent: tra_loi_sai
   examples: |
+    - sai rồi
+    - không đúng
+    - tôi chưa hiểu
     - sai rồi
     - sai roi
     - rồi sai
@@ -956,8 +1032,11 @@ nlu:
     - không đúng
 
 # Ngoài phạm vi
-- intent: out_of_scope
+- intent: ngoai_pham_vi
   examples: |
+    - tôi muốn đặt đồ ăn
+    - tổng thống Mỹ là ai
+    - tôi muốn đi ngủ
     - Tôi muốn đặt đồ ăn
     - Tôi là ai
     - Tôi muốn đi ngủ
