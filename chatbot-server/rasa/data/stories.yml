@@ -1,7 +1,27 @@
 version: "3.1"
 
-#cvh đổi tất cả sang tiếng việt và cập nhật thêm các câu chuyện sau: 
+#cvh đổi tất cả sang tiếng việt và cập nhật thêm 4 câu chuyện sau: mục tiêu đào tạo, chuẩn đầu ra, khung chương trình đào tạo, thông tin giảng viên all
 stories:
+- story: mục tiêu đào tạo
+  steps:
+  - intent: muc_tieu_dao_tao
+  - action: utter_muc_tieu_dao_tao
+
+- story: chuẩn đầu ra
+  steps:
+  - intent: chuan_dau_ra
+  - action: utter_chuan_dau_ra
+
+- story: khung chương trình đào tạo
+  steps:
+  - intent: khung_ctdt
+  - action: utter_khung_ctdt
+
+- story: thông tin giảng viên all
+  steps:
+  - intent: thong_tin_giang_vien_all
+  - action: utter_thong_tin_giang_vien_all
+
   # Story chào hỏi
   - story: chao_hoi
     steps:

@@ -1,7 +1,39 @@
 version: "3.1"
 
-#cvh sua lai noi dung cua tat ca y dinh va them cac y dinh sau:
+#cvh việt hóa tất cả nội dung và cập nhật thêm các ý định sau: Mục tiêu đào tạo, Chuẩn đầu ra, Khung chương trình đào tạo, Thông tin toàn bộ giảng viên.
 nlu:
+# Mục tiêu đào tạo
+- intent: muc_tieu_dao_tao
+  examples: |
+    - mục tiêu đào tạo ngành công nghệ thông tin
+    - chương trình đào tạo nhằm mục tiêu gì
+    - mục tiêu đào tạo PEO là gì
+    - giáo trình CNTT hướng tới mục tiêu gì
+
+# Chuẩn đầu ra
+- intent: chuan_dau_ra
+  examples: |
+    - chuẩn đầu ra của ngành CNTT
+    - SLOs ngành công nghệ thông tin là gì
+    - sinh viên ra trường cần đạt được gì
+    - chuẩn năng lực sau khi tốt nghiệp CNTT
+
+# Khung chương trình đào tạo
+- intent: khung_ctdt
+  examples: |
+    - khung chương trình đào tạo ngành CNTT
+    - gồm những học phần nào
+    - tổng quan CTĐT 150 tín chỉ
+    - thông tin học phần trong CTDT
+
+# Thông tin toàn bộ giảng viên
+- intent: thong_tin_giang_vien_all
+  examples: |
+    - cho tôi danh sách giảng viên CNTT
+    - ai là giảng viên khoa CNTT
+    - thông tin tất cả giảng viên công nghệ thông tin
+    - liệt kê giảng viên ngành CNTT
+
 # Chào hỏi
 - intent: chao_hoi
   examples: |

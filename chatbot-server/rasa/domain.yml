@@ -3,9 +3,14 @@ version: "3.1"
 session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
-#cvh đổi tất cả sang tiếng việt và cập nhật thêm: 
+#cvh đổi tất cả sang tiếng việt và cập nhật thêm các ý định sau: mục tiêu đào tạo, chuẩn đầu ra, khung ctdt và thông tin tất cả giảng viên.
+#Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action.  
 # Khai báo các intent (tiếng Việt)
 intents:
+  - muc_tieu_dao_tao
+  - chuan_dau_ra
+  - khung_ctdt
+  - thong_tin_giang_vien_all
   - chao_hoi
   - cam_on
   - tam_biet
@@ -51,6 +56,44 @@ slots:
 
 # Các phản hồi (responses)
 responses:
+ # Mục tiêu đào tạo
+  utter_muc_tieu_dao_tao:
+    - text: >
+        Chương trình đào tạo ngành CNTT nhằm:
+        1. Trang bị kiến thức cơ sở và chuyên sâu về lập trình, mạng, dữ liệu;
+        2. Phát triển tư duy phản biện, giải quyết vấn đề, khả năng lãnh đạo;
+        3. Rèn luyện kỹ năng giao tiếp, làm việc nhóm, tự học và học tập suốt đời;
+        4. Đảm bảo đạo đức nghề nghiệp và trách nhiệm xã hội.
+
+  # Chuẩn đầu ra
+  utter_chuan_dau_ra:
+    - text: >
+        Chuẩn đầu ra bao gồm:
+        a) Áp dụng kiến thức toán, khoa học và kỹ thuật để giải quyết vấn đề CNTT;
+        b) Thiết kế giải pháp kỹ thuật với cân nhắc an toàn, môi trường;
+        c) Nghiên cứu, mô phỏng, phân tích dữ liệu để đưa ra kết luận;
+        d) Kỹ năng giao tiếp, thuyết trình, lãnh đạo dự án và học tập suốt đời.
+
+  # Khung CTDT
+  utter_khung_ctdt:
+    - text: >
+        Khung CTĐT ngành CNTT (150 tín chỉ) gồm:
+        - Kiến thức đại cương (37 TC): Triết, kinh tế chính trị, Toán, Tin học đại cương…
+        - Kiến thức cơ sở ngành (27 TC): Cơ sở lập trình C, CSDL, Thiết kế Web, Cấu trúc dữ liệu…
+        - Kiến thức chuyên ngành (74 TC): Kiến trúc máy tính, Bảo mật, Java, Mạng, Đồ án chuyên ngành…
+        - Thực tập tốt nghiệp (3 TC) và Đồ án tốt nghiệp (9 TC).
+
+  # Thông tin toàn bộ giảng viên
+  utter_thong_tin_giang_vien_all:
+    - text: >
+        Danh sách giảng viên khoa CNTT:
+        - Đỗ Thị Huyền (Tin học đại cương, CNPM)
+        - Lê Mai Nam (Cấu trúc dữ liệu, Giải thuật)
+        - Lê Thùy Dung (Toán rời rạc, Java)
+        - Lê Trung Thực (Khai phá dữ liệu, Thực tập)
+        - Lưu Thị Thảo (Phân tích thiết kế, Học máy)
+        - Ngô Thùy Giang (Thiết kế Web, AI tạo sinh)
+        - … (và nhiều thầy cô khác)
   # Chào hỏi
   utter_chao_hoi:
     - text: "Chào bạn 👋, mình là Chatbot EAUT của Trường Đại học Công nghệ Đông Á. Mình có thể giúp gì cho bạn không 😊."
@@ -185,6 +228,10 @@ responses:
 
 # Khai báo action
 actions:
+  - utter_muc_tieu_dao_tao
+  - utter_chuan_dau_ra
+  - utter_khung_ctdt
+  - utter_thong_tin_giang_vien_all
   - utter_please_rephrase
   - utter_ngoai_pham_vi
   - utter_chao_hoi
