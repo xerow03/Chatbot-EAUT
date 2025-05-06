@@ -1,11 +1,38 @@
 version: "3.1"
-#cvh đổi sang tiếng việt và cập nhật thêm:
+#cvh đổi sang tiếng việt và cập nhật thêm để cho chat trả lời tự nhiên hơn.
 rules:
   # Rule chào hỏi
+   # Chào hỏi + gợi mở
   - rule: chao_hoi
     steps:
       - intent: chao_hoi
       - action: utter_chao_hoi
+      - action: utter_please_ask_anything   # “Bạn còn muốn hỏi gì thêm không?”
+
+  # Hỏi tín chỉ (form)
+  - rule: ask_credit
+    condition:
+      - active_loop: null
+    steps:
+      - intent: tin_chi
+      - action: credit_form
+      - active_loop: credit_form
+
+  - rule: submit_credit_form
+    condition:
+      - active_loop: credit_form
+    steps:
+      - action: credit_form
+      - active_loop: null
+      - action: utter_hoc_phan_va_tin_chi
+      - action: utter_please_ask_anything
+
+  # Fallback NLU mềm dẻo
+  - rule: fallback_nlu
+    steps:
+      - intent: nlu_fallback
+      - action: utter_please_rephrase
+      - action: utter_suggest_intents   # “Bạn có thể hỏi về mục tiêu đào tạo, học phí, …”
 
   # Rule cảm ơn
   - rule: cam_on

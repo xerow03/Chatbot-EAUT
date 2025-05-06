@@ -4,7 +4,7 @@ session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
 #cvh đổi tất cả sang tiếng việt và cập nhật thêm các ý định sau: mục tiêu đào tạo, chuẩn đầu ra, khung ctdt và thông tin tất cả giảng viên.
-#Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action.  
+#Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action, form, slot...  
 # Khai báo các intent (tiếng Việt)
 intents:
   - muc_tieu_dao_tao
@@ -38,15 +38,46 @@ intents:
 entities:
   - teacher_name
   - class_name
+  - organization
+  - course_name      # tên học phần
+  - credit_number    # số tín chỉ
+  - semester         # học kỳ
+  - year             # năm học
 
 # Các slot sử dụng trong tracker
 slots:
+
+  course_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: course_name
+
+  credit_number:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: credit_number
+
+  semester:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: semester
+
+  year:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: year
+
   teacher_name:
     type: text
     mappings:
       - type: from_entity
         entity: teacher_name
     influence_conversation: false
+
   class_name:
     type: text
     mappings:
@@ -54,8 +85,32 @@ slots:
         entity: class_name
     influence_conversation: false
 
+forms:
+  credit_form:
+    required_slots:
+      course_name:
+        - type: from_entity
+          entity: course_name
+        - type: from_text
+      credit_number:
+        - type: from_entity
+          entity: credit_number
+    # Khi đã đầy đủ, action sẽ tự động gọi utter_hoc_phan_va_tin_chi
+
 # Các phản hồi (responses)
 responses:
+utter_please_ask_anything:
+  - text: "Bạn còn muốn hỏi thêm điều gì khác không ạ? 😊"
+
+utter_suggest_intents:
+  - text: >
+      Mình có thể giúp bạn về:
+      - Mục tiêu đào tạo
+      - Chuẩn đầu ra
+      - Khung chương trình
+      - Thông tin giảng viên
+      - Học phần & tín chỉ
+      Bạn muốn hỏi gì tiếp? 
  # Mục tiêu đào tạo
   utter_muc_tieu_dao_tao:
     - text: >
@@ -228,6 +283,9 @@ responses:
 
 # Khai báo action
 actions:
+
+  - credit_form
+
   - utter_muc_tieu_dao_tao
   - utter_chuan_dau_ra
   - utter_khung_ctdt

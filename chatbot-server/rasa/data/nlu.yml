@@ -312,7 +312,7 @@ nlu:
     - alo ạ
     - alo ad ơi!!
 
-# Tạm biệt
+# Cảm ơn 
 - intent: cam_on
   examples: |
     - cảm ơn ad
@@ -535,7 +535,7 @@ nlu:
     - tạm biệt
     - đi đây
 
-# Hỏi Chatbot hỗ trợ gì
+# hỗ trợ gì
 - intent: ho_tro
   examples: |
     - bạn hỗ trợ gì
@@ -580,7 +580,7 @@ nlu:
     - bạn có những chức năng gì
     - bạn có thể trả lời những câu hỏi nào
 
-# Giáo viên
+# thông tin Giáo viên (đơn lẻ)
 - intent: thong_tin_giang_vien
   examples: |
     - thầy [Lê Trung Thực](teacher_name)
