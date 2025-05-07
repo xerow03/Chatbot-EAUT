@@ -2,6 +2,55 @@ version: "3.1"
 
 #cvh việt hóa tất cả nội dung và cập nhật thêm các ý định sau: Mục tiêu đào tạo, Chuẩn đầu ra, Khung chương trình đào tạo, Thông tin toàn bộ giảng viên.
 nlu:
+
+#thực thể nâng cao: Từ đồng nghĩa 
+- synonym: công nghệ thông tin
+  examples: |
+    - cntt
+    - CNTT
+    - IT
+    - Công nghệ TT
+   
+- synonym: trường đại học công nghệ đông á
+  examples: |
+    - EAUT
+    - eaut
+    - DHCNDA
+    - CNDA 
+
+#Mô hình sẽ học và tự động nhận diện nếu câu người dùng có từ trong danh sách đó.
+#Thực thể nâng cao: lookup table    
+- lookup: teacher_name
+  examples: |
+    - Lê Trung Thực
+    - Đỗ Thị Huyền
+    - Lê Mai Nam
+    - Lê Thùy Dung
+    - Lưu Thị Thảo
+    - Ngô Thùy Giang
+    - Nguyễn Phồn Lữa
+    - Nguyễn Thị Nga
+    - Nguyễn Thị Thúy Nga
+    - Nguyễn Thu Hằng
+    - Trần Nguyên Hoàng
+    - Mai Văn Linh
+    - Phạm Thị Loan
+    - Bùi Thanh Loan
+    - Đặng Khánh Trung
+    - Hà Trọng Thắng
+    - Hồ Anh Dũng
+    - Lê Thị Huyền Trang
+    - Nguyễn Đức Thiện (1980)
+    - Nguyễn Đức Thiện (A)
+    - Nguyễn Đức Thiện (1984)
+    - Nguyễn Đức Thiện (B)
+    - Trần Thị Thuý Hằng
+    - Trần Xuân Thanh
+    - Nguyễn Hải Bình
+    - Nguyễn Hữu Phương
+    - Ngô Thị Hoa
+    - Nguyễn Viết Hùng
+
 # Mục tiêu đào tạo
 - intent: muc_tieu_dao_tao
   examples: |
@@ -44,7 +93,6 @@ nlu:
     - cho em hỏi ạ
     - alo, có ai hỗ trợ không ạ?
     - em muốn được tư vấn ạ
-
     - em xin chào [trường đại học công nghệ đông á]{"entity":"organization"} a
     - ê
     - hí
