@@ -52,6 +52,31 @@ rules:
       - intent: ho_tro
       - action: utter_ho_tro
 
+  - rule: Trả lời phần đại cương
+    steps:
+      - intent: ctdt_dai_cuong
+      - action: utter_ctdt_dai_cuong
+
+  - rule: Trả lời phần cơ sở ngành
+    steps:
+      - intent: ctdt_co_so_nganh
+      - action: utter_ctdt_co_so_nganh
+
+  - rule: Trả lời phần chuyên ngành
+    steps:
+      - intent: ctdt_chuyen_nganh
+      - action: utter_ctdt_chuyen_nganh
+
+  - rule: Trả lời phần tự chọn
+    steps:
+      - intent: ctdt_tu_chon
+      - action: utter_ctdt_tu_chon
+
+  - rule: Trả lời phần thực tập và đồ án
+    steps:
+      - intent: ctdt_thuc_tap
+      - action: utter_ctdt_thuc_tap
+
   # Rule kế hoạch giảng dạy và học tập
   - rule: ke_hoach_giang_day_hoc_tap
     steps:
@@ -63,6 +88,12 @@ rules:
     steps:
       - intent: thong_tin_giang_vien
       - action: utter_thong_tin_giang_vien
+  
+  #rule tra cứu thông tin giảng viên    
+  - rule: Tra cứu thông tin giảng viên
+    steps:
+      - intent: teacher_info
+      - action: action_tra_cuu_thong_tin_giang_vien
 
   # Rule học phần
   - rule: hoc_phan

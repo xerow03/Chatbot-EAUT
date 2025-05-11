@@ -2,6 +2,17 @@ version: "3.1"
 
 #cvh việt hóa tất cả nội dung và cập nhật thêm các ý định sau: Mục tiêu đào tạo, Chuẩn đầu ra, Khung chương trình đào tạo, Thông tin toàn bộ giảng viên.
 nlu:
+#cvh thêm inttent teacer_info giúp nhận diện khi người dùng hỏi thông tin chi tiết về một giảng viên cụ thể.
+- intent: teacher_info
+  examples: |
+    - Giới thiệu về giảng viên [Đỗ Thị Huyền](teacher_name)
+    - Cô [Ngô Thùy Giang](teacher_name) dạy gì vậy?
+    - Em muốn biết về thầy [Lê Mai Nam](teacher_name)
+    - [Nguyễn Phồn Lữa](teacher_name) là ai?
+    - [Phạm Thị Loan](teacher_name) chuyên dạy môn gì?
+    - Giảng viên [Trần Xuân Thanh](teacher_name) có giỏi không?
+    - Giảng viên [Nguyễn Viết Hùng](teacher_name) dạy cái gì?
+    - Cho biết thông tin về [Nguyễn Đức Thiện (1980)](teacher_name)
 
 #thực thể nâng cao: Từ đồng nghĩa 
 - synonym: công nghệ thông tin
@@ -66,6 +77,14 @@ nlu:
     - SLOs ngành công nghệ thông tin là gì
     - sinh viên ra trường cần đạt được gì
     - chuẩn năng lực sau khi tốt nghiệp CNTT
+    - chuẩn đầu ra ngành CNTT là gì
+    - cho em hỏi chuẩn đầu ra ngành công nghệ thông tin
+    - sinh viên học CNTT ra trường làm gì
+    - kỹ năng cần có sau khi học CNTT
+    - tốt nghiệp CNTT làm được gì
+    - sinh viên ngành CNTT ra trường có thể làm việc gì
+    - sau khi học CNTT thì đi làm ở đâu
+    - đầu ra ngành công nghệ thông tin
 
 # Khung chương trình đào tạo
 - intent: khung_ctdt
@@ -74,7 +93,51 @@ nlu:
     - gồm những học phần nào
     - tổng quan CTĐT 150 tín chỉ
     - thông tin học phần trong CTDT
+    - chương trình đào tạo ngành CNTT
+    - khung chương trình đào tạo CNTT
+    - ngành CNTT học những gì
+    - khung chương trình công nghệ thông tin
+    - CTDT CNTT gồm những gì
+    - chương trình học ngành công nghệ thông tin
+    - chương trình đào tạo ngành CNTT gồm những gì
+    - khung chương trình đào tạo
+    - chương trình đào tạo CNTT ra sao
+    - khung chương trình học CNTT
+    - CTDT ngành CNTT
+    - nội dung đào tạo CNTT
 
+- intent: ctdt_dai_cuong
+  examples: |
+    - học phần đại cương gồm những gì
+    - đại cương có bao nhiêu tín chỉ
+    - kiến thức đại cương gồm các môn nào
+    - môn nào thuộc phần đại cương
+
+- intent: ctdt_co_so_nganh
+  examples: |
+    - học phần cơ sở ngành là gì
+    - cơ sở ngành bao gồm môn gì
+    - các môn cơ sở ngành
+    - môn học thuộc phần cơ sở ngành
+
+- intent: ctdt_chuyen_nganh
+  examples: |
+    - học phần chuyên ngành bao gồm những gì
+    - phần chuyên ngành gồm các môn gì
+    - chuyên ngành học những môn nào
+
+- intent: ctdt_tu_chon
+  examples: |
+    - học phần tự chọn gồm những gì
+    - chuyên ngành công nghệ phần mềm có các môn nào
+    - học phần tự chọn ngành HTTT là gì
+
+- intent: ctdt_thuc_tap
+  examples: |
+    - thực tập tốt nghiệp và đồ án tốt nghiệp gồm gì
+    - đồ án tốt nghiệp bao nhiêu tín chỉ
+    - thực tập gồm bao nhiêu tín chỉ
+    
 # Thông tin toàn bộ giảng viên
 - intent: thong_tin_giang_vien_all
   examples: |

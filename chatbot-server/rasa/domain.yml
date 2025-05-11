@@ -7,6 +7,12 @@ session_config:
 #Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action, form, slot...  
 # Khai báo các intent (tiếng Việt)
 intents:
+  - ctdt_dai_cuong
+  - ctdt_co_so_nganh
+  - ctdt_chuyen_nganh
+  - ctdt_tu_chon
+  - ctdt_thuc_tap
+  - teacher_info
   - muc_tieu_dao_tao
   - chuan_dau_ra
   - khung_ctdt
@@ -46,6 +52,10 @@ entities:
 
 # Các slot sử dụng trong tracker
 slots:
+#cvh thêm slot teacher_name để lưu tên giảng viên
+  teacher_name:
+    type: text
+    influence_conversation: true
 
   course_name:
     type: text
@@ -99,44 +109,92 @@ forms:
 
 # Các phản hồi (responses)
 responses:
-utter_please_ask_anything:
-  - text: "Bạn còn muốn hỏi thêm điều gì khác không ạ? 😊"
+  utter_ctdt_dai_cuong:
+    - text: >
+        Kiến thức đại cương gồm 37 tín chỉ, bao gồm các môn như: Triết học, Kinh tế chính trị, Tư tưởng Hồ Chí Minh, Tin học đại cương, Giải tích, Đại số, Toán rời rạc, Tiếng Anh 1-3, Giáo dục thể chất, và quốc phòng.
 
-utter_suggest_intents:
-  - text: >
-      Mình có thể giúp bạn về:
-      - Mục tiêu đào tạo
-      - Chuẩn đầu ra
-      - Khung chương trình
-      - Thông tin giảng viên
-      - Học phần & tín chỉ
-      Bạn muốn hỏi gì tiếp? 
+  utter_ctdt_co_so_nganh:
+    - text: >
+        Kiến thức cơ sở ngành (27 tín chỉ) gồm: Cơ sở lập trình với C, Cơ sở dữ liệu, Thiết kế Web, Hệ thống thông tin quản lý, Phát triển ứng dụng cho thiết bị di động, Thương mại điện tử, Cấu trúc dữ liệu và giải thuật, Thực tập nhận thức, và Phương pháp tính toán tối ưu.
+
+  utter_ctdt_chuyen_nganh:
+    - text: >
+        Kiến thức chuyên ngành bắt buộc (41 TC) gồm: Kiến trúc máy tính, An toàn bảo mật thông tin, Windows Server, Nguyên lý HĐH, Hệ quản trị CSDL Oracle, Công nghệ đa phương tiện, Java, Mạng máy tính, Phân tích & thiết kế hệ thống, Quản lý dự án, .NET, Tiếng Anh CN, Đồ án chuyên ngành.
+
+  utter_ctdt_tu_chon:
+    - text: >
+       Học phần tự chọn chia theo 2 hướng:
+        - Công nghệ phần mềm: Kiểm thử, Đồ hoạ, Trí tuệ nhân tạo, Java, Web PHP, Python, Xử lý ảnh, Đồ án CNPM, Tiếng Anh CN CNPM.
+        - Hệ thống thông tin: Blockchain, Linux, Windows Server 2, Mạng doanh nghiệp, Khai phá dữ liệu, Học máy, Big Data, Đồ án HTTT, Tiếng Anh CN HTTT.
+
+  utter_ctdt_thuc_tap:
+    - text: >
+        Thực tập tốt nghiệp: 3 tín chỉ, Đồ án tốt nghiệp: 9 tín chỉ. Tổng cộng 12 tín chỉ giúp sinh viên ứng dụng kiến thức vào thực tiễn và hoàn thành chương trình học.
+
+  utter_please_ask_anything:
+    - text: "Bạn còn muốn hỏi thêm điều gì khác không ạ? 😊"
+
+  utter_suggest_intents:
+    - text: >
+        Mình có thể giúp bạn về:
+        - Mục tiêu đào tạo
+        - Chuẩn đầu ra
+        - Khung chương trình
+        - Thông tin giảng viên
+        - Học phần & tín chỉ
+        Bạn muốn hỏi gì tiếp? 
+ 
  # Mục tiêu đào tạo
   utter_muc_tieu_dao_tao:
     - text: >
-        Chương trình đào tạo ngành CNTT nhằm:
-        1. Trang bị kiến thức cơ sở và chuyên sâu về lập trình, mạng, dữ liệu;
-        2. Phát triển tư duy phản biện, giải quyết vấn đề, khả năng lãnh đạo;
-        3. Rèn luyện kỹ năng giao tiếp, làm việc nhóm, tự học và học tập suốt đời;
-        4. Đảm bảo đạo đức nghề nghiệp và trách nhiệm xã hội.
+        Mục tiêu chương trình đào tạo ngành CNTT bao gồm:
+        1. Trang bị kiến thức cơ sở, chuyên sâu và kỹ năng nghề nghiệp cho sinh viên.
+        2. Phát triển kỹ năng lãnh đạo, tổ chức, cập nhật kiến thức và có tầm nhìn toàn cầu.
+        3. Đào tạo sinh viên có đạo đức nghề nghiệp, tư duy phản biện và năng lực tự học suốt đời.
+        4. Sinh viên tốt nghiệp đạt chuẩn tiếng Anh TOEIC từ 450 trở lên.
 
   # Chuẩn đầu ra
   utter_chuan_dau_ra:
-    - text: >
-        Chuẩn đầu ra bao gồm:
-        a) Áp dụng kiến thức toán, khoa học và kỹ thuật để giải quyết vấn đề CNTT;
-        b) Thiết kế giải pháp kỹ thuật với cân nhắc an toàn, môi trường;
-        c) Nghiên cứu, mô phỏng, phân tích dữ liệu để đưa ra kết luận;
-        d) Kỹ năng giao tiếp, thuyết trình, lãnh đạo dự án và học tập suốt đời.
+    - text: |
+        🎓 **Chuẩn đầu ra ngành Công nghệ thông tin - Đại học Công nghệ Đông Á**:
+
+        1. **Tên ngành**: 
+        - Tiếng Việt: Công nghệ thông tin
+        - Tiếng Anh: Information Technology
+
+        2. **Kiến thức**: 
+        - Lý luận chính trị, khoa học tự nhiên, toán học, giáo dục quốc phòng – thể chất.
+        - Kiến thức ngành: máy tính, mạng, lập trình, quản trị dữ liệu.
+        - Kiến thức chuyên sâu: công nghệ phần mềm, phân tích dữ liệu, hệ thống thông tin.
+
+        3. **Kỹ năng**:
+        - Lập trình, thiết kế hệ thống, kiểm thử, xử lý dữ liệu, bảo mật, chuyển giao công nghệ.
+        - Kỹ năng mềm: tự học, nghiên cứu, làm việc nhóm, thuyết trình, ngoại ngữ.
+
+        4. **Năng lực tự chủ**:
+        - Giải quyết vấn đề độc lập, sáng tạo, thích nghi với môi trường cạnh tranh.
+
+        5. **Vị trí làm việc**:
+        - Chuyên viên lập trình, quản trị hệ thống, bảo mật, phân tích dữ liệu, giảng dạy,...
+        - Có thể làm việc tại Nhật nếu đủ điều kiện.
+
+        Bạn muốn biết rõ phần nào hơn? Mình có thể phân tích từng mục cho bạn.
 
   # Khung CTDT
   utter_khung_ctdt:
-    - text: >
-        Khung CTĐT ngành CNTT (150 tín chỉ) gồm:
-        - Kiến thức đại cương (37 TC): Triết, kinh tế chính trị, Toán, Tin học đại cương…
-        - Kiến thức cơ sở ngành (27 TC): Cơ sở lập trình C, CSDL, Thiết kế Web, Cấu trúc dữ liệu…
-        - Kiến thức chuyên ngành (74 TC): Kiến trúc máy tính, Bảo mật, Java, Mạng, Đồ án chuyên ngành…
-        - Thực tập tốt nghiệp (3 TC) và Đồ án tốt nghiệp (9 TC).
+    - text: |
+        ✅ **Khung Chương trình Đào tạo ngành CNTT (150 tín chỉ):**
+        1. **Kiến thức đại cương**: 37 tín chỉ
+        2. **Kiến thức cơ sở ngành**: 27 tín chỉ
+        3. **Kiến thức chuyên ngành**:
+           - Bắt buộc: 41 tín chỉ
+           - Tự chọn (2 hướng):
+              - CN phần mềm: 33 TC
+              - HT thông tin: 33 TC
+        4. **Thực tập & Đồ án tốt nghiệp**: 12 tín chỉ
+        
+        📌 Tổng cộng: 150 tín chỉ.
+        Bạn muốn xem chi tiết từng học phần hay định hướng nào?
 
   # Thông tin toàn bộ giảng viên
   utter_thong_tin_giang_vien_all:
@@ -283,9 +341,9 @@ utter_suggest_intents:
 
 # Khai báo action
 actions:
-
+actions:
+  - action_tra_cuu_thong_tin_giang_vien
   - credit_form
-
   - utter_muc_tieu_dao_tao
   - utter_chuan_dau_ra
   - utter_khung_ctdt
