@@ -7,6 +7,9 @@ session_config:
 #Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action, form, slot...  
 # Khai báo các intent (tiếng Việt)
 intents:
+  - thong_tin_do_an_tot_nghiep
+  - thong_tin_thuc_tap_tot_nghiep
+  - thong_tin_do_an_cnpm
   - ctdt_dai_cuong
   - ctdt_co_so_nganh
   - ctdt_chuyen_nganh
@@ -109,6 +112,104 @@ forms:
 
 # Các phản hồi (responses)
 responses:
+
+  utter_thong_tin_do_an_tot_nghiep:
+    - text: |
+        **Học phần Đồ án tốt nghiệp (IT4238)**  
+        - **Tên tiếng Anh:** Graduate Thesis  
+        - **Tín chỉ:** 9 (9 LT, 0 TH, 0 ĐAMH, 0 TT)  
+        - **Thuộc CTĐT:** Công nghệ thông tin  
+        - **Học phần tiên quyết:** Không  
+        - **Giảng viên phụ trách:** ThS. Lê Trung Thực  
+        - **Giảng viên giảng dạy:**  
+          • Đỗ Thị Huyền  
+          • Lê Trung Thực  
+          • Nguyễn Thị Thúy Nga  
+          • Trần Nguyên Hoàng  
+          • Phạm Thị Loan  
+          • Ngô Thùy Giang  
+          • Lưu Thị Thảo  
+          • Lê Mai Nam  
+          • Nguyễn Thị Nga  
+          • Đoàn Thị Thùy Linh  
+          • Lê Thùy Dung  
+          • Nguyễn Thu Hằng  
+
+        **Mô tả ngắn:**  
+        Đồ án tốt nghiệp là học phần cuối cùng, yêu cầu sinh viên tổng hợp toàn bộ kiến thức để thực hiện và hoàn thiện một sản phẩm CNTT đặc thù.
+
+        **Chuẩn đầu ra (CLO):**  
+        - CLO1: Vận dụng kiến thức cơ bản CNTT vào dự án.  
+        - CLO2: Hoàn thiện sản phẩm đặc thù ngành CNTT.  
+        - CLO3: Thực hiện công việc đúng hạn, làm việc nhóm hiệu quả.  
+
+        **Nội dung chính:**  
+        1. Hướng dẫn đề tài & yêu cầu đồ án (15 giờ LT)  
+        2. Thực hiện đồ án (120 giờ thực tập/thực hành)  
+
+        **Đánh giá học phần:**  
+        - Thi cuối kỳ (100%): Khóa luận tốt nghiệp  
+
+        **Tài liệu tham khảo chính:**  
+        - Phân tích & thiết kế hướng đối tượng bằng UML (Nguyễn Văn Ba)  
+        - An Introduction to OOP with Java (C. Thomas Wu)  
+        - Thiết kế trang web bằng JavaScript (Đậu Quang Tuấn)  
+
+        **Điều kiện:**  
+        Sinh viên phải tích lũy đủ số tín chỉ trước khi đăng ký.
+
+  utter_thong_tin_thuc_tap_tot_nghiep:
+    - text: |
+        **Học phần Thực tập tốt nghiệp (IT4237)**
+        - **Tên tiếng Anh:** Capstone  
+        - **Tín chỉ:** 3 (1 LT, 0 TH, 0 ĐAMH, 2 TT)  
+        - **Phụ thuộc CTĐT:** Công nghệ thông tin  
+        - **Học phần tiên quyết:** Không  
+        - **Giảng viên phụ trách:** ThS. Lê Trung Thực  
+        - **Giảng viên giảng dạy:** Đỗ Thị Huyền, Lê Trung Thực, Nguyễn Thị Thúy Nga, Trần Nguyên Hoàng, Phạm Thị Loan, Ngô Thùy Giang, Lưu Thị Thảo, Lê Mai Nam, Nguyễn Thị Nga, Đoàn Thị Thùy Linh, Lê Thùy Dung  
+        
+        **Mô tả ngắn gọn:**  
+        Sinh viên thực tập tại doanh nghiệp, vận dụng kiến thức đã học để phân tích, báo cáo và rèn luyện kỹ năng chuyên môn cùng thói quen làm việc chuyên nghiệp.
+
+        **Chuẩn đầu ra (CLO):**  
+        - CLO1: Hiểu mục tiêu bài toán, mô hình hóa thực tế.  
+        - CLO2: Trình bày báo cáo và xác định hướng giải quyết.  
+        - CLO3: Vận dụng phương pháp giải quyết vấn đề thực tế.  
+        - CLO4: Lập kế hoạch và hoàn thành công việc đúng hạn.  
+
+        **Đánh giá học phần:**  
+        1. Chuyên cần (10%)  
+        2. Tiểu luận giữa kỳ (30%)  
+        3. Báo cáo cuối kỳ (60%)  
+
+        **Tài liệu chính:**  
+        - Phân tích & thiết kế hướng đối tượng bằng UML (Nguyễn Văn Ba)  
+        - Nhập môn cơ sở dữ liệu (Nguyễn Tuệ)  
+
+        **Điều kiện thực hiện:**  
+        Sinh viên phải nộp nhật ký thực tập ≥ 80% thời gian và hoàn thành đầy đủ các buổi hướng dẫn.
+
+  utter_thong_tin_do_an_cnpm:
+    - text: |
+        Học phần **Đồ án chuyên ngành công nghệ phần mềm (IT3228)** có 5 tín chỉ, bao gồm: 1 tín chỉ lý thuyết, 4 tín chỉ đồ án. Học phần giúp sinh viên vận dụng các kiến thức như phân tích thiết kế hệ thống, lập trình .NET, lập trình PHP để giải quyết bài toán thực tế. 
+
+        ✅ **Chuẩn đầu ra của học phần gồm:**
+        - CLO1: Thu thập yêu cầu, phát biểu bài toán và chọn công nghệ phù hợp.
+        - CLO2: Phân tích và thiết kế hệ thống.
+        - CLO3: Xây dựng và triển khai hệ thống.
+        - CLO4: Viết báo cáo, trình bày trước lớp.
+        - CLO5: Làm việc nhóm đúng hạn và đảm bảo chất lượng.
+
+        👨‍🏫 **Giảng viên giảng dạy:** ThS. Đỗ Thị Huyền, ThS. Lê Trung Thực, ThS. Nguyễn Thị Thúy Nga, ThS. Trần Nguyên Hoàng, và nhiều giảng viên khác trong khoa.
+
+        📌 **Học phần tiên quyết:** Cơ sở dữ liệu, Phân tích thiết kế hệ thống, Lập trình .NET, Lập trình PHP.
+
+        📘 **Tài liệu chính:** 
+        - System Analysis & Design (Dennis et al.)
+        - Cơ sở dữ liệu quan hệ và thiết kế (Lê Văn Phùng)
+        - Learning MySQL (Vinicius M. Grippa)
+        - Transact-SQL (Itzik Ben-Gan)
+
   utter_ctdt_dai_cuong:
     - text: >
         Kiến thức đại cương gồm 37 tín chỉ, bao gồm các môn như: Triết học, Kinh tế chính trị, Tư tưởng Hồ Chí Minh, Tin học đại cương, Giải tích, Đại số, Toán rời rạc, Tiếng Anh 1-3, Giáo dục thể chất, và quốc phòng.

@@ -62,6 +62,38 @@ nlu:
     - Ngô Thị Hoa
     - Nguyễn Viết Hùng
 
+- intent: thong_tin_thuc_tap_tot_nghiep
+  examples: |
+    - em muốn biết về học phần Thực tập tốt nghiệp
+    - học phần Thực tập tốt nghiệp là gì
+    - nội dung môn Thực tập tốt nghiệp
+    - cho mình xin thông tin về IT4237
+    - học phần IT4237 gồm những gì
+    - Thực tập tốt nghiệp có bao nhiêu tín chỉ
+    - mô tả học phần Capstone
+    - ai phụ trách môn Thực tập tốt nghiệp
+    - giảng viên dạy IT4237 là ai
+    - chuẩn đầu ra của học phần thực tập tốt nghiệp
+    - điều kiện tham gia thực tập tốt nghiệp
+    - tài liệu tham khảo môn Thực tập tốt nghiệp
+    - cách đánh giá môn Thực tập tốt nghiệp
+
+- intent: thong_tin_do_an_tot_nghiep
+  examples: |
+    - em muốn biết về học phần Đồ án tốt nghiệp
+    - học phần Đồ án tốt nghiệp là gì
+    - mô tả học phần IT4238
+    - nội dung môn Đồ án tốt nghiệp
+    - Đồ án tốt nghiệp có bao nhiêu tín chỉ
+    - cho mình xin thông tin về IT4238
+    - ai phụ trách môn Đồ án tốt nghiệp
+    - giảng viên dạy IT4238 là ai
+    - chuẩn đầu ra của Đồ án tốt nghiệp
+    - yêu cầu của học phần Đồ án tốt nghiệp
+    - tài liệu tham khảo môn Đồ án tốt nghiệp
+    - cách đánh giá Đồ án tốt nghiệp
+    - học phần Graduate Thesis gồm những gì
+    - ThS. Lê Trung Thực dạy môn IT4238 phải không
 # Mục tiêu đào tạo
 - intent: muc_tieu_dao_tao
   examples: |
@@ -137,7 +169,7 @@ nlu:
     - thực tập tốt nghiệp và đồ án tốt nghiệp gồm gì
     - đồ án tốt nghiệp bao nhiêu tín chỉ
     - thực tập gồm bao nhiêu tín chỉ
-    
+
 # Thông tin toàn bộ giảng viên
 - intent: thong_tin_giang_vien_all
   examples: |
@@ -260,6 +292,25 @@ nlu:
     - tư vấn về đồ án và khoá luận tốt nghiệp
     - luận văn tốt nghiệp là gì
     - muốn hỏi về luận văn tốt nghiệp
+
+- intent: thong_tin_do_an_cnpm
+  examples: |
+    - học phần Đồ án chuyên ngành công nghệ phần mềm là gì
+    - em muốn biết về học phần đồ án chuyên ngành công nghệ phần mềm
+    - nội dung của đồ án chuyên ngành công nghệ phần mềm
+    - chương trình đồ án phần mềm học cái gì
+    - thông tin chi tiết về môn học đồ án chuyên ngành công nghệ phần mềm
+    - thầy cô nào dạy đồ án chuyên ngành công nghệ phần mềm
+    - giảng viên phụ trách học phần đồ án chuyên ngành công nghệ phần mềm
+    - mã học phần IT3228 là gì
+    - điều kiện học đồ án chuyên ngành công nghệ phần mềm
+    - ai biên soạn học phần đồ án chuyên ngành công nghệ phần mềm
+    - giảng viên nào dạy học phần IT3228
+    - chuẩn đầu ra của đồ án chuyên ngành là gì
+    - cấu trúc nội dung môn đồ án chuyên ngành phần mềm
+    - môn đồ án chuyên ngành phần mềm học mấy tín chỉ
+    - mô tả môn đồ án chuyên ngành phần mềm
+    - chương trình giảng dạy môn đồ án chuyên ngành công nghệ phần mềm
 
 # Điều kiện bảo vệ đồ án tốt nghiệp
 - intent: dieu_kien_bao_ve

@@ -1,6 +1,18 @@
 version: "3.1"
 #cvh đổi sang tiếng việt và cập nhật thêm để cho chat trả lời tự nhiên hơn.
 rules:
+
+rules:
+  - rule: Trả lời về học phần Đồ án tốt nghiệp
+    steps:
+      - intent: thong_tin_do_an_tot_nghiep
+      - action: utter_thong_tin_do_an_tot_nghiep
+
+  - rule: Trả lời về học phần Thực tập tốt nghiệp
+    steps:
+      - intent: thong_tin_thuc_tap_tot_nghiep
+      - action: utter_thong_tin_thuc_tap_tot_nghiep
+
   # Rule chào hỏi
    # Chào hỏi + gợi mở
   - rule: chao_hoi
@@ -137,6 +149,11 @@ rules:
     steps:
       - intent: dieu_kien_bao_ve
       - action: utter_dieu_kien_bao_ve
+
+  - rule: Trả lời về học phần Đồ án chuyên ngành công nghệ phần mềm
+    steps:
+      - intent: thong_tin_do_an_cnpm
+      - action: utter_thong_tin_do_an_cnpm
 
   # Rule đồ án và điều kiện bảo vệ
   - rule: do_an_va_dieu_kien_bao_ve
