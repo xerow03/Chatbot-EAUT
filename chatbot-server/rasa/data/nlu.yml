@@ -18,7 +18,27 @@ nlu:
     - Phân tích thiết kế hệ thống
     - Đồ án tốt nghiệp
     - Thực tập tốt nghiệp
+    - Toán tời rạc
+    - Kiểm thử phần mềm
+    - Cơ sở lập trình với C
+    - Kỹ thuật đồ họa máy tính
+    - Thiết kế web
+    - Công nghệ Java
+    - Phát triển ứng dụng cho thiết bị di động
+    - Lập trình web với PHP
+    - Cấu trúc dữ liệu và giải thuật
+    - Công nghệ phần mềm
+    - Phương pháp tính toán tối ưu
+    - Lập trình hướng đối tượng với Java
+    - Lập trình .NET
+    - Thực tập nhận thức ngành nghề
+    - Phân tích thiết kế hệ thống
+    - Quản lý dự án CNTT
+    - Tiếng anh chuyên ngành công nghệ phần mềm
+    - Đồ án chuyên ngành công nghệ phần mềm
+    - Công nghệ phần mềm
 #3. tiếp theo là sang file domain.yml 
+
 #cvh thêm inttent teacer_info giúp nhận diện khi người dùng hỏi thông tin chi tiết về một giảng viên cụ thể.
 - intent: teacher_info
   examples: |
