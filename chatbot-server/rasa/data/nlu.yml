@@ -2,6 +2,23 @@ version: "3.1"
 
 #cvh việt hóa tất cả nội dung và cập nhật thêm các ý định sau: Mục tiêu đào tạo, Chuẩn đầu ra, Khung chương trình đào tạo, Thông tin toàn bộ giảng viên.
 nlu:
+#cvh thêm các dữ liệu về các môn học, nếu bạn muốn thêm môn học hãy làm như sau:
+#1. thêm vào cấu trúc này câu bạn muốn hỏi về môn học đó, sau tên môn học hãy điền lookup ten_mon_hoc ở sau môn học đóđó
+- intent: mon_hoc_info
+  examples: |
+    - Môn [Phân tích thiết kế hệ thống](ten_mon_hoc) là gì?
+    - Cho em biết về môn [Đồ án tốt nghiệp](ten_mon_hoc)
+    - Em muốn biết học phần [Thực tập tốt nghiệp](ten_mon_hoc)
+    - Thầy ơi môn [Phân tích thiết kế hệ thống](ten_mon_hoc) có bao nhiêu tín chỉ?
+    - [Thực tập tốt nghiệp](ten_mon_hoc) do ai giảng dạy?
+    - Giới thiệu về học phần [Đồ án tốt nghiệp](ten_mon_hoc)
+#2. thêm tên môn học vào đây như là một danh sách các môn học cho k14 
+- lookup: ten_mon_hoc
+  examples: |
+    - Phân tích thiết kế hệ thống
+    - Đồ án tốt nghiệp
+    - Thực tập tốt nghiệp
+#3. tiếp theo là sang file domain.yml 
 #cvh thêm inttent teacer_info giúp nhận diện khi người dùng hỏi thông tin chi tiết về một giảng viên cụ thể.
 - intent: teacher_info
   examples: |

@@ -3,6 +3,53 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
 
+#6. Sau khi xong các bước trên sang đây điền dữ liệu các môn họchọc như ở bên dưới
+MON_HOC_INFO = {
+    "Phân tích thiết kế hệ thống": {
+        "mã học phần": "IT3225",
+        "số tín chỉ": "3 (3, 0, 0, 0)",
+        "giảng viên": "Đỗ Thị Huyền, Lê Trung Thực, Trần Nguyên Hoàng...",
+        "mô tả": "Học phần giúp sinh viên hiểu quy trình phân tích, thiết kế hệ thống thông tin, áp dụng xây dựng và triển khai các hệ thống vừa và nhỏ."
+    },
+    "Đồ án tốt nghiệp": {
+        "mã học phần": "IT4238",
+        "số tín chỉ": "9 (9, 0, 0, 0)",
+        "giảng viên": "Lê Trung Thực, Đỗ Thị Huyền, Nguyễn Thị Nga...",
+        "mô tả": "Sinh viên áp dụng toàn bộ kiến thức đã học để thực hiện một dự án CNTT hoàn chỉnh, nộp báo cáo và bảo vệ trước hội đồng."
+    },
+    "Thực tập tốt nghiệp": {
+        "mã học phần": "IT4237",
+        "số tín chỉ": "3 (1, 0, 0, 2)",
+        "giảng viên": "Lê Trung Thực, Phạm Thị Loan...",
+        "mô tả": "Sinh viên tham gia thực tập tại doanh nghiệp, học cách ứng dụng kỹ năng thực tế và viết báo cáo thu hoạch theo yêu cầu."
+    }
+}
+#7. sau khi có dữ liệu các môn học thì cần lớp xử lí các dữ liệu trên như lớp dưới đây 
+class ActionTraCuuThongTinMonHoc(Action):
+    def name(self) -> Text:
+        return "action_tra_cuu_thong_tin_mon_hoc"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        ten_mon = tracker.get_slot("ten_mon_hoc")
+        if ten_mon in MON_HOC_INFO:
+            info = MON_HOC_INFO[ten_mon]
+            reply = (
+                f"📘 **{ten_mon}**\n"
+                f"- Mã học phần: {info['mã học phần']}\n"
+                f"- Số tín chỉ: {info['số tín chỉ']}\n"
+                f"- Giảng viên: {info['giảng viên']}\n"
+                f"- Mô tả: {info['mô tả']}"
+            )
+        else:
+            reply = f"Xin lỗi, tôi không tìm thấy thông tin học phần **{ten_mon}**."
+
+        dispatcher.utter_message(text=reply)
+        return []
+#8. Tiếp theo là bước cuối, sang rules và thêm ngữ cảnh cho chatbot hiểu thôithôi
+
 #cvh: thêm thông tin chi tiết từng giảng viên một 
 TEACHER_INFO = {
     "Đỗ Thị Huyền": "Giảng viên Đỗ Thị Huyền chuyên dạy các môn cơ bản về Tin học và Công nghệ phần mềm. Với phương pháp giảng dạy dễ hiểu và sinh động, cô đã giúp nhiều sinh viên nắm vững kiến thức nền tảng và áp dụng vào thực tế. Cô cũng quản lý các học phần liên quan đến tin học đại cương và công nghệ phần mềm tại bộ môn CNPM.",

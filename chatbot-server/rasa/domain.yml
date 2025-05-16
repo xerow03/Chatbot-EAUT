@@ -3,6 +3,19 @@ version: "3.1"
 session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
+#4. sau khi sang file domain hãy sửa intents, slots, action tương ứng với môn học bạn mmuốn chatbot hiểu
+#5. sau đó ta sẽ sang file action để viết action, action bên dưới là để định nghĩa action thôi nè 
+intents:
+- mon_hoc_info
+
+slots:
+  ten_mon_hoc:
+    type: text
+    influence_conversation: true
+
+actions:
+- action_tra_cuu_thong_tin_mon_hoc
+
 #cvh đổi tất cả sang tiếng việt và cập nhật thêm các ý định sau: mục tiêu đào tạo, chuẩn đầu ra, khung ctdt và thông tin tất cả giảng viên.
 #Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action, form, slot...  
 # Khai báo các intent (tiếng Việt)
@@ -441,7 +454,6 @@ responses:
     - text: "Xin lỗi bạn, mình trả lời chưa đúng ý. Mình sẽ cố gắng cải thiện hơn ạ."
 
 # Khai báo action
-actions:
 actions:
   - action_tra_cuu_thong_tin_giang_vien
   - credit_form

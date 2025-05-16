@@ -1,8 +1,12 @@
 version: "3.1"
 #cvh đổi sang tiếng việt và cập nhật thêm để cho chat trả lời tự nhiên hơn.
 rules:
+#9. bước cuối là thêm rule dưới đây về môn học là xong. 
+  - rule: Trả lời thông tin môn học
+    steps:
+    - intent: mon_hoc_info
+    - action: action_tra_cuu_thong_tin_mon_hoc
 
-rules:
   - rule: Trả lời về học phần Đồ án tốt nghiệp
     steps:
       - intent: thong_tin_do_an_tot_nghiep
