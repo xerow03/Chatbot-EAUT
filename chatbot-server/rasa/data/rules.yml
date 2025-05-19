@@ -34,14 +34,14 @@ rules:
       - action: credit_form
       - active_loop: credit_form
 
-  - rule: submit_credit_form
-    condition:
-      - active_loop: credit_form
-    steps:
-      - action: credit_form
-      - active_loop: null
-      - action: utter_hoc_phan_va_tin_chi
-      - action: utter_please_ask_anything
+  # - rule: submit_credit_form
+  #   condition:
+  #     - active_loop: credit_form
+  #   steps:
+  #     - action: credit_form
+  #     - active_loop: null
+  #     - action: utter_hoc_phan_va_tin_chi
+  #     - action: utter_please_ask_anything
 
   # Fallback NLU mềm dẻo
   - rule: fallback_nlu
@@ -117,11 +117,11 @@ rules:
       - intent: hoc_phan
       - action: utter_hoc_phan
 
-  # Rule tín chỉ
-  - rule: tin_chi
-    steps:
-      - intent: tin_chi
-      - action: utter_tin_chi
+  # # Rule tín chỉ
+  # - rule: tin_chi
+  #   steps:
+  #     - intent: tin_chi
+  #     - action: utter_tin_chi
 
   # Rule học phần và tín chỉ
   - rule: hoc_phan_va_tin_chi
@@ -214,8 +214,8 @@ rules:
       - intent: ngoai_pham_vi
       - action: utter_ngoai_pham_vi
 
-  # Rule fallback NLU (yêu cầu hỏi lại)
-  - rule: fallback_nlu
-    steps:
-      - intent: nlu_fallback
-      - action: utter_please_rephrase
+  # # Rule fallback NLU (yêu cầu hỏi lại)
+  # - rule: fallback_nlu
+  #   steps:
+  #     - intent: nlu_fallback
+  #     - action: utter_please_rephrase

@@ -5,16 +5,6 @@ session_config:
   carry_over_slots_to_new_session: true
 #4. sau khi sang file domain hãy sửa intents, slots, action tương ứng với môn học bạn mmuốn chatbot hiểu
 #5. sau đó ta sẽ sang file action để viết action, action bên dưới là để định nghĩa action thôi nè 
-intents:
-- mon_hoc_info
-
-slots:
-  ten_mon_hoc:
-    type: text
-    influence_conversation: true
-
-actions:
-- action_tra_cuu_thong_tin_mon_hoc
 
 #cvh đổi tất cả sang tiếng việt và cập nhật thêm các ý định sau: mục tiêu đào tạo, chuẩn đầu ra, khung ctdt và thông tin tất cả giảng viên.
 #Ngoài ra cvh còn thêm các utter cho 4 intent mới và thêm các action, form, slot...  
@@ -67,12 +57,8 @@ entities:
   - year             # năm học
 
 # Các slot sử dụng trong tracker
-slots:
 #cvh thêm slot teacher_name để lưu tên giảng viên
-  teacher_name:
-    type: text
-    influence_conversation: true
-
+slots:
   course_name:
     type: text
     mappings:
@@ -111,17 +97,12 @@ slots:
         entity: class_name
     influence_conversation: false
 
+# Khi đã đầy đủ, action sẽ tự động gọi utter_hoc_phan_va_tin_chi
 forms:
   credit_form:
     required_slots:
-      course_name:
-        - type: from_entity
-          entity: course_name
-        - type: from_text
-      credit_number:
-        - type: from_entity
-          entity: credit_number
-    # Khi đã đầy đủ, action sẽ tự động gọi utter_hoc_phan_va_tin_chi
+      - course_name
+      - credit_number
 
 # Các phản hồi (responses)
 responses:
@@ -455,6 +436,7 @@ responses:
 
 # Khai báo action
 actions:
+  - action_tra_cuu_thong_tin_mon_hoc
   - action_tra_cuu_thong_tin_giang_vien
   - credit_form
   - utter_muc_tieu_dao_tao
@@ -472,6 +454,7 @@ actions:
   - utter_phuong_thuc_to_chuc_dao_tao
   - utter_hinh_thuc_dao_tao
   - utter_ke_hoach_giang_day_hoc_tap
+  - utter_hoc_phan_va_tin_chi
   - utter_do_an_khoa_luan
   - utter_dieu_kien_bao_ve
   - utter_danh_gia_do_an_khoa_luan

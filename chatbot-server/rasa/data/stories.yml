@@ -23,141 +23,144 @@ stories:
   - action: utter_thong_tin_giang_vien_all
 
   # Story chào hỏi
-  - story: chao_hoi
-    steps:
-    - intent: chao_hoi
-    - action: utter_chao_hoi
+- story: chao_hoi
+  steps:
+  - intent: chao_hoi
+  - action: utter_chao_hoi
+  - action: utter_please_ask_anything
 
   # Story cảm ơn
-  - story: cam_on
-    steps:
-    - intent: cam_on
-    - action: utter_cam_on
+- story: cam_on
+  steps:
+  - intent: cam_on
+  - action: utter_cam_on
 
   # Story tạm biệt
-  - story: tam_biet
-    steps:
-    - intent: tam_biet
-    - action: utter_tam_biet
-
+- story: tam_biet
+  steps:
+  - intent: tam_biet
+  - action: utter_tam_biet
+# c 
   # Story hỗ trợ
-  - story: ho_tro
-    steps:
-    - intent: ho_tro
-    - action: utter_ho_tro
+- story: ho_tro
+  steps:
+  - intent: ho_tro
+  - action: utter_ho_tro
 
   # Story kế hoạch giảng dạy và học tập
-  - story: ke_hoach_giang_day_hoc_tap
-    steps:
-    - intent: ke_hoach_giang_day_hoc_tap
-    - action: utter_ke_hoach_giang_day_hoc_tap
+- story: ke_hoach_giang_day_hoc_tap
+  steps:
+  - intent: ke_hoach_giang_day_hoc_tap
+  - action: utter_ke_hoach_giang_day_hoc_tap
 
   # Story thông tin giảng viên
-  - story: thong_tin_giang_vien
-    steps:
-    - intent: thong_tin_giang_vien
-    - action: utter_thong_tin_giang_vien
+- story: thong_tin_giang_vien
+  steps:
+  - intent: thong_tin_giang_vien
+  - action: utter_thong_tin_giang_vien
 
   # Story học phần
-  - story: hoc_phan
-    steps:
-    - intent: hoc_phan
-    - action: utter_hoc_phan
+- story: hoc_phan
+  steps:
+  - intent: hoc_phan
+  - action: utter_hoc_phan
 
   # Story tín chỉ
-  - story: tin_chi
-    steps:
-    - intent: tin_chi
-    - action: utter_tin_chi
+- story: tin_chi
+  steps:
+  - intent: tin_chi
+  - action: credit_form
+  - action: utter_tin_chi
 
   # Story học phần và tín chỉ
-  - story: hoc_phan_va_tin_chi
-    steps:
-    - intent: hoc_phan_va_tin_chi
-    - action: utter_hoc_phan
-    - action: utter_tin_chi
+- story: hoc_phan_va_tin_chi
+  steps:
+  - intent: hoc_phan_va_tin_chi
+  - action: utter_hoc_phan
+  - action: utter_tin_chi
 
   # Story phương thức tổ chức đào tạo
-  - story: phuong_thuc_to_chuc_dao_tao
-    steps:
-    - intent: phuong_thuc_to_chuc_dao_tao
-    - action: utter_phuong_thuc_to_chuc_dao_tao
+- story: phuong_thuc_to_chuc_dao_tao
+  steps:
+  - intent: phuong_thuc_to_chuc_dao_tao
+  - action: utter_phuong_thuc_to_chuc_dao_tao
 
   # Story hình thức đào tạo
-  - story: hinh_thuc_dao_tao
-    steps:
-    - intent: hinh_thuc_dao_tao
-    - action: utter_hinh_thuc_dao_tao
+- story: hinh_thuc_dao_tao
+  steps:
+  - intent: hinh_thuc_dao_tao
+  - action: utter_hinh_thuc_dao_tao
 
   # Story đồ án/khóa luận
-  - story: do_an_khoa_luan
-    steps:
-    - intent: do_an_khoa_luan
-    - action: utter_do_an_khoa_luan
+- story: do_an_khoa_luan
+  steps:
+  - intent: do_an_khoa_luan
+  - action: utter_do_an_khoa_luan
 
   # Story điều kiện bảo vệ
-  - story: dieu_kien_bao_ve
-    steps:
-    - intent: dieu_kien_bao_ve
-    - action: utter_dieu_kien_bao_ve
+- story: dieu_kien_bao_ve
+  steps:
+  - intent: dieu_kien_bao_ve
+  - action: utter_dieu_kien_bao_ve
 
   # Story đồ án và điều kiện bảo vệ
-  - story: do_an_va_dieu_kien_bao_ve
-    steps:
-    - intent: do_an_va_dieu_kien_bao_ve
-    - action: utter_dieu_kien_bao_ve
-    - action: utter_do_an_khoa_luan
+- story: do_an_va_dieu_kien_bao_ve
+  steps:
+  - intent: do_an_va_dieu_kien_bao_ve
+  - action: utter_dieu_kien_bao_ve
+  - action: utter_do_an_khoa_luan
 
   # Story đánh giá đồ án, khóa luận
-  - story: danh_gia_do_an_khoa_luan
-    steps:
-    - intent: danh_gia_do_an_khoa_luan
-    - action: utter_danh_gia_do_an_khoa_luan
+- story: danh_gia_do_an_khoa_luan
+  steps:
+  - intent: danh_gia_do_an_khoa_luan
+  - action: utter_danh_gia_do_an_khoa_luan
 
   # Story học phí
-  - story: hoc_phi
-    steps:
-    - intent: hoc_phi
-    - action: utter_hoc_phi
+- story: hoc_phi
+  steps:
+  - intent: hoc_phi
+  - action: utter_hoc_phi
 
   # Story lệ phí thi
-  - story: le_phi_thi
-    steps:
-    - intent: le_phi_thi
-    - action: utter_le_phi_thi
+- story: le_phi_thi
+  steps:
+  - intent: le_phi_thi
+  - action: utter_le_phi_thi
 
   # Story học bổng
-  - story: hoc_bong
-    steps:
-    - intent: hoc_bong
-    - action: utter_hoc_bong
+- story: hoc_bong
+  steps:
+  - intent: hoc_bong
+  - action: utter_hoc_bong
 
   # Story xử lý vi phạm
-  - story: xu_ly_vi_pham
-    steps:
-    - intent: xu_ly_vi_pham
-    - action: utter_xu_ly_vi_pham
+- story: xu_ly_vi_pham
+  steps:
+  - intent: xu_ly_vi_pham
+  - action: utter_xu_ly_vi_pham
 
   # Story chê bai
-  - story: che_bai
-    steps:
-    - intent: che_bai
-    - action: utter_che_bai
+- story: che_bai
+  steps:
+  - intent: che_bai
+  - action: utter_che_bai
 
   # Story trả lời sai
-  - story: tra_loi_sai
-    steps:
-    - intent: tra_loi_sai
-    - action: utter_tra_loi_sai
+- story: tra_loi_sai
+  steps:
+  - intent: tra_loi_sai
+  - action: utter_tra_loi_sai
 
   # Story ngoài phạm vi
-  - story: ngoai_pham_vi
-    steps:
-    - intent: ngoai_pham_vi
-    - action: utter_ngoai_pham_vi
+- story: ngoai_pham_vi
+  steps:
+  - intent: ngoai_pham_vi
+  - action: utter_ngoai_pham_vi
 
   # Story fallback NLU (yêu cầu hỏi lại)
-  - story: fallback_nlu
-    steps:
-    - intent: nlu_fallback
-    - action: utter_please_rephrase
+- story: fallback_nlu
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+  - action: utter_suggest_intents
