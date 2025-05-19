@@ -1,142 +1,221 @@
 version: "3.1"
-
+#cvh đổi sang tiếng việt và cập nhật thêm để cho chat trả lời tự nhiên hơn.
 rules:
-  # Rule chào hỏi
-  - rule: respond to greet
+#9. bước cuối là thêm rule dưới đây về môn học là xong. 
+  - rule: Trả lời thông tin môn học
     steps:
-    - intent: greet
-    - action: utter_greet
+    - intent: mon_hoc_info
+    - action: action_tra_cuu_thong_tin_mon_hoc
+
+  - rule: Trả lời về học phần Đồ án tốt nghiệp
+    steps:
+      - intent: thong_tin_do_an_tot_nghiep
+      - action: utter_thong_tin_do_an_tot_nghiep
+
+  - rule: Trả lời về học phần Thực tập tốt nghiệp
+    steps:
+      - intent: thong_tin_thuc_tap_tot_nghiep
+      - action: utter_thong_tin_thuc_tap_tot_nghiep
+
+  # Rule chào hỏi
+   # Chào hỏi + gợi mở
+  - rule: chao_hoi
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - action: utter_please_ask_anything   # “Bạn còn muốn hỏi gì thêm không?”
+
+  # Hỏi tín chỉ (form)
+  - rule: ask_credit
+    condition:
+      - active_loop: null
+    steps:
+      - intent: tin_chi
+      - action: credit_form
+      - active_loop: credit_form
+
+  # - rule: submit_credit_form
+  #   condition:
+  #     - active_loop: credit_form
+  #   steps:
+  #     - action: credit_form
+  #     - active_loop: null
+  #     - action: utter_hoc_phan_va_tin_chi
+  #     - action: utter_please_ask_anything
+
+  # Fallback NLU mềm dẻo
+  - rule: fallback_nlu
+    steps:
+      - intent: nlu_fallback
+      - action: utter_please_rephrase
+      - action: utter_suggest_intents   # “Bạn có thể hỏi về mục tiêu đào tạo, học phí, …”
 
   # Rule cảm ơn
-  - rule: respond to thanks
+  - rule: cam_on
     steps:
-    - intent: thanks
-    - action: utter_thanks
+      - intent: cam_on
+      - action: utter_cam_on
 
   # Rule tạm biệt
-  - rule: respond to bye
+  - rule: tam_biet
     steps:
-    - intent: bye
-    - action: utter_bye
+      - intent: tam_biet
+      - action: utter_tam_biet
 
-  # Rule hỗ trợ gì
-  - rule: respond to what_support
+  # Rule hỗ trợ
+  - rule: ho_tro
     steps:
-    - intent: what_support
-    - action: utter_what_support
+      - intent: ho_tro
+      - action: utter_ho_tro
+
+  - rule: Trả lời phần đại cương
+    steps:
+      - intent: ctdt_dai_cuong
+      - action: utter_ctdt_dai_cuong
+
+  - rule: Trả lời phần cơ sở ngành
+    steps:
+      - intent: ctdt_co_so_nganh
+      - action: utter_ctdt_co_so_nganh
+
+  - rule: Trả lời phần chuyên ngành
+    steps:
+      - intent: ctdt_chuyen_nganh
+      - action: utter_ctdt_chuyen_nganh
+
+  - rule: Trả lời phần tự chọn
+    steps:
+      - intent: ctdt_tu_chon
+      - action: utter_ctdt_tu_chon
+
+  - rule: Trả lời phần thực tập và đồ án
+    steps:
+      - intent: ctdt_thuc_tap
+      - action: utter_ctdt_thuc_tap
 
   # Rule kế hoạch giảng dạy và học tập
-  - rule: respond to ke_hoach_giang_day_hoc_tap
+  - rule: ke_hoach_giang_day_hoc_tap
     steps:
-    - intent: ke_hoach_giang_day_hoc_tap
-    - action: utter_ke_hoach_giang_day_hoc_tap
+      - intent: ke_hoach_giang_day_hoc_tap
+      - action: utter_ke_hoach_giang_day_hoc_tap
 
-  # Rule giáo viên
-  - rule: respond to teacher
+  # Rule thông tin giảng viên
+  - rule: thong_tin_giang_vien
     steps:
-    - intent: teacher_with_name
-    - action: utter_teacher_with_name
+      - intent: thong_tin_giang_vien
+      - action: utter_thong_tin_giang_vien
+  
+  #rule tra cứu thông tin giảng viên    
+  - rule: Tra cứu thông tin giảng viên
+    steps:
+      - intent: teacher_info
+      - action: action_tra_cuu_thong_tin_giang_vien
 
   # Rule học phần
   - rule: hoc_phan
     steps:
-    - intent: hoc_phan
-    - action: utter_hoc_phan
+      - intent: hoc_phan
+      - action: utter_hoc_phan
 
-  # Rule tín chỉ
-  - rule: tin_chi
-    steps:
-    - intent: tin_chi
-    - action: utter_tin_chi
+  # # Rule tín chỉ
+  # - rule: tin_chi
+  #   steps:
+  #     - intent: tin_chi
+  #     - action: utter_tin_chi
 
   # Rule học phần và tín chỉ
   - rule: hoc_phan_va_tin_chi
     steps:
-    - intent: hoc_phan_va_tin_chi
-    - action: utter_hoc_phan
-    - action: utter_tin_chi
+      - intent: hoc_phan_va_tin_chi
+      - action: utter_hoc_phan
+      - action: utter_tin_chi
 
-  # Rule phương thức tổ chức và đào tạo
-  - rule: respond to phuong_thuc_to_chuc_dao_tao
+  # Rule phương thức tổ chức đào tạo
+  - rule: phuong_thuc_to_chuc_dao_tao
     steps:
-    - intent: phuong_thuc_to_chuc_dao_tao
-    - action: utter_phuong_thuc_to_chuc_dao_tao
+      - intent: phuong_thuc_to_chuc_dao_tao
+      - action: utter_phuong_thuc_to_chuc_dao_tao
 
   # Rule hình thức đào tạo
-  - rule: respond to hinh_thuc_dao_tao
+  - rule: hinh_thuc_dao_tao
     steps:
-    - intent: hinh_thuc_dao_tao
-    - action: utter_hinh_thuc_dao_tao
+      - intent: hinh_thuc_dao_tao
+      - action: utter_hinh_thuc_dao_tao
 
-  # Rule đồ án khóa luận
-  - rule: respond to do_an_khoa_luan
+  # Rule đồ án/khóa luận
+  - rule: do_an_khoa_luan
     steps:
-    - intent: do_an_khoa_luan
-    - action: utter_do_an_khoa_luan
+      - intent: do_an_khoa_luan
+      - action: utter_do_an_khoa_luan
 
   # Rule điều kiện bảo vệ
-  - rule: respond to dieu_kien_bao_ve
+  - rule: dieu_kien_bao_ve
     steps:
-    - intent: dieu_kien_bao_ve
-    - action: utter_dieu_kien_bao_ve
+      - intent: dieu_kien_bao_ve
+      - action: utter_dieu_kien_bao_ve
+
+  - rule: Trả lời về học phần Đồ án chuyên ngành công nghệ phần mềm
+    steps:
+      - intent: thong_tin_do_an_cnpm
+      - action: utter_thong_tin_do_an_cnpm
 
   # Rule đồ án và điều kiện bảo vệ
-  - rule: respond to do_an_va_dieu_kien_bao_ve
+  - rule: do_an_va_dieu_kien_bao_ve
     steps:
-    - intent: do_an_va_dieu_kien_bao_ve
-    - action: utter_dieu_kien_bao_ve
-    - action: utter_do_an_khoa_luan
-  
+      - intent: do_an_va_dieu_kien_bao_ve
+      - action: utter_dieu_kien_bao_ve
+      - action: utter_do_an_khoa_luan
+
   # Rule đánh giá đồ án, khóa luận
-  - rule: respond to danh_gia_do_an_khoa_luan
+  - rule: danh_gia_do_an_khoa_luan
     steps:
-    - intent: danh_gia_do_an_khoa_luan
-    - action: utter_danh_gia_do_an_khoa_luan
+      - intent: danh_gia_do_an_khoa_luan
+      - action: utter_danh_gia_do_an_khoa_luan
 
   # Rule học phí
-  - rule: respond to hoc_phi
+  - rule: hoc_phi
     steps:
-    - intent: hoc_phi
-    - action: utter_hoc_phi
+      - intent: hoc_phi
+      - action: utter_hoc_phi
 
   # Rule lệ phí thi
-  - rule: respond to le_phi_thi
+  - rule: le_phi_thi
     steps:
-    - intent: le_phi_thi
-    - action: utter_le_phi_thi
+      - intent: le_phi_thi
+      - action: utter_le_phi_thi
 
   # Rule học bổng
-  - rule: respond to hoc_bong
+  - rule: hoc_bong
     steps:
-    - intent: hoc_bong
-    - action: utter_hoc_bong
+      - intent: hoc_bong
+      - action: utter_hoc_bong
 
   # Rule xử lý vi phạm
-  - rule: respond to xu_ly_vi_pham
+  - rule: xu_ly_vi_pham
     steps:
-    - intent: xu_ly_vi_pham
-    - action: utter_xu_ly_vi_pham
-  
+      - intent: xu_ly_vi_pham
+      - action: utter_xu_ly_vi_pham
+
   # Rule chê bai
-  - rule: respond to che_bai
+  - rule: che_bai
     steps:
-    - intent: che_bai
-    - action: utter_che_bai
+      - intent: che_bai
+      - action: utter_che_bai
 
   # Rule trả lời sai
-  - rule: respond to tra_loi_sai
+  - rule: tra_loi_sai
     steps:
-    - intent: tra_loi_sai
-    - action: utter_tra_loi_sai
+      - intent: tra_loi_sai
+      - action: utter_tra_loi_sai
 
-  # Rule ngoài phạm vi xử lý
-  - rule: out-of-scope
+  # Rule ngoài phạm vi
+  - rule: ngoai_pham_vi
     steps:
-    - intent: out_of_scope
-    - action: utter_out_of_scope
-  
-  # Rule yêu cầu hỏi lại khi độ tin cậy thấp
-  - rule: response to please_rephrase
-    steps:
-    - intent: nlu_fallback
-    - action: utter_please_rephrase
+      - intent: ngoai_pham_vi
+      - action: utter_ngoai_pham_vi
+
+  # # Rule fallback NLU (yêu cầu hỏi lại)
+  # - rule: fallback_nlu
+  #   steps:
+  #     - intent: nlu_fallback
+  #     - action: utter_please_rephrase
