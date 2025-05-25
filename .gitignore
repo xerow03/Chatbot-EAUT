@@ -9,45 +9,7 @@ __pycache__
 # Models folder
 models/
 
-# dependencies
-chatbot-client/node_modules
-chatbot-client/.pnp
-chatbot-client/.pnp.js
-chatbot-client/.yarn/install-state.gz
-
-# testing
-chatbot-client/coverage
-
-# next.js
-chatbot-client/.next/
-chatbot-client/out/
-
-# production
-chatbot-client/build
-
-# misc
-chatbot-client/.DS_Store
-chatbot-client/*.pem
-
-# debug
-chatbot-client/yarn.lock
-chatbot-client/npm-debug.log*
-chatbot-client/yarn-debug.log*
-chatbot-client/yarn-error.log*
-
-# local env files
-chatbot-client/.env*.local
-
-# vercel
-chatbot-client/.vercel
-
-# typescript
-chatbot-client/*.tsbuildinfo
-chatbot-client/next-env.d.ts
-
 # Server Ignore
-chatbot-server/api/.venv
-chatbot-server/rasa/.venv
-chatbot-server/rasa/.rasa
-chatbot-server/api/__pycache__
-chatbot-server/api/**/__pycache__
+chatbot-server/api/.venv/
+chatbot-server/rasa/.rasa/
+chatbot-server/rasa/.venv/
